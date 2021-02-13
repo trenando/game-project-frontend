@@ -1,0 +1,12 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    background-color: var(--header-bckgr-color);
+    color: var(--second-text-color);
+}
+
+.text{
+    display: flex;
+    align-items: center;
+}

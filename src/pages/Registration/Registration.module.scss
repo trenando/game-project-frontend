@@ -1,0 +1,5 @@
+@import "../../mixins.scss";
+
+.section {
+  @include section(calc(100vh - 140px));
+}

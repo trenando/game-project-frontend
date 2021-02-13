@@ -1,0 +1,54 @@
+#root {
+  --header-bckgr-color: #212425;
+  --main-bckgr-color: #718087;
+  --content-bckgr-color: #e9e8dd;
+  --nav-hover-color: #4a5663;
+  --second-text-color: #e9e8dd;
+  --main-text-color: rgb(61, 61, 61);
+  --main-border-color: #212425;
+  --field-border: #212425;
+  --field-shadow: #2664a5;
+  --field-active: #3388e2;
+  --error-color: red;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--second-text-color);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+input {
+  margin: 0;
+  outline: none;
+}
+
+main {
+  box-sizing: border-box;
+  padding: 20px 0 30px;
+  color: var(--main-text-color);
+  min-height: calc(100vh - 90px);
+  background-color: var(--main-bckgr-color);
+}

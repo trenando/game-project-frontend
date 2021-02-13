@@ -1,0 +1,65 @@
+@import "../../../mixins.scss";
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 230px;
+  width: 400px;
+  background-color: var(--content-bckgr-color);
+  @include section-block(15px);
+
+  &__text {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  &__block {
+    width: 350px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__field {
+    @include field;
+    height: 25px;
+    width: 225px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__error {
+    font-size: 14px;
+    color: var(--error-color);
+    position: absolute;
+    bottom: 2px;
+    transform: translateX(125px);
+  }
+
+  &__btn {
+    display: flex;
+    box-sizing: border-box;
+    width: 350px;
+    height: 25px;
+    margin-top: 20px;
+    padding-left: 125px;
+    button {
+      @include form-button(90px,3px);
+      margin-right: 105px;
+    }
+  }
+}
+
+.field__error {
+  box-sizing: border-box;
+  border: 1px solid var(--error-color);
+  height: 25px;
+  width: 225px;
+}
