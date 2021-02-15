@@ -1,14 +1,20 @@
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import { authorizationPost } from "../../redux/actions/authActions/authActions";
-import { Login } from "./Login"
-import { LoginDispatchType } from "./LoginTypes";
+import { Login } from "./Login";
+import { LoginContainerType, LoginDispatchType } from "./LoginTypes";
 
-const mapDispatchToProps: LoginDispatchType = (dispatch) => {
-    return {
-        authorization: (values) => {
-            dispatch(authorizationPost(values));
-        }
-    };
+const mapStateToProps: LoginContainerType = ({ auth }) => {
+  return {
+    errorMessage: auth.errorMessage,
+  };
 };
 
-export const LoginContainer = connect(null, mapDispatchToProps)(Login);
+const mapDispatchToProps: LoginDispatchType = (dispatch) => {
+  return {
+    authorization: (values) => {
+      dispatch(authorizationPost(values));
+    },
+  };
+};
+
+export const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -13,7 +13,7 @@
 }
 
 @mixin section-block($radius-size) {
-  background-color: var(--content-bckgr-color);
+  background-color: var(--content-background-color);
   border: 2px solid var(--main-border-color);
   border-radius: $radius-size;
   box-shadow: 0px 8px 16px -8px var(--main-border-color);
@@ -29,7 +29,7 @@
 @mixin form-button($width-size,$radius) {
   box-sizing: border-box;
   color: var(--second-text-color);
-  background-color: var(--main-border-color);
+  background-color: var(--main-button-color);
   width: $width-size;
   border-radius: $radius;
   &:hover {

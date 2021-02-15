@@ -10,7 +10,7 @@ export const Login: LoginType = (props) => {
 
   return (
     <section className={style.section}>
-      <LoginForm onSubmit={onSubmit} />
+      <LoginForm onSubmit={onSubmit} errorMessage={props.errorMessage}/>
     </section>
   );
 };

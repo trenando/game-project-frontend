@@ -1,15 +1,17 @@
 #root {
-  --header-bckgr-color: #212425;
-  --main-bckgr-color: #718087;
-  --content-bckgr-color: #e9e8dd;
+  --header-background-color: #212425;
+  --main-background-color: #718087;
+  --content-background-color: #e9e8dd;
   --nav-hover-color: #4a5663;
   --second-text-color: #e9e8dd;
-  --main-text-color: rgb(61, 61, 61);
+  --main-text-color: #3d3d3d;
   --main-border-color: #212425;
+  --main-button-color: #212425;
   --field-border: #212425;
   --field-shadow: #2664a5;
   --field-active: #3388e2;
-  --error-color: red;
+  --error-color: #ff0000;
+  --error-background-color: #fddddd;
 }
 
 body {
@@ -40,6 +42,10 @@ button {
   padding: 0;
 }
 
+form {
+  box-sizing: border-box;
+}
+
 input {
   margin: 0;
   outline: none;
@@ -50,5 +56,5 @@ main {
   padding: 20px 0 30px;
   color: var(--main-text-color);
   min-height: calc(100vh - 90px);
-  background-color: var(--main-bckgr-color);
+  background-color: var(--main-background-color);
 }

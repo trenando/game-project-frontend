@@ -41,17 +41,26 @@ export const LoginForm: LoginFormTypes = (props) => {
                 </label>
                 <Field
                   id={el.name}
-                  className={ errors[el.name] && touched[el.name] ? (style.field__error) : (style.form__field)}
+                  className={
+                    errors[el.name] && touched[el.name] ? style.field__error : style.form__field
+                  }
                   type={el.type}
                   placeholder={el.placeholder}
                   component="input"
                   name={el.name}
                   validate={el.validate}
                 />
-                {errors[el.name] && touched[el.name] && <div className={style.form__error}>{errors[el.name]}</div>}
+                {errors[el.name] && touched[el.name] && (
+                  <div className={style.form__error}>{errors[el.name]}</div>
+                )}
               </div>
             );
           })}
+          {props.errorMessage ? (
+            <div className={style.error}>
+              <span>{props.errorMessage}</span>
+            </div>
+          ) : null}
           <div className={style.form__btn}>
             <button type="submit" disabled={isSubmitting}>
               Логин

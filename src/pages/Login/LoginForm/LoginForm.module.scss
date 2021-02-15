@@ -6,8 +6,8 @@
   align-items: center;
   flex-direction: column;
   height: 230px;
-  width: 400px;
-  background-color: var(--content-bckgr-color);
+  width: 370px;
+  background-color: var(--content-background-color);
   @include section-block(15px);
 
   &__text {
@@ -17,7 +17,7 @@
   }
 
   &__block {
-    width: 350px;
+    width: 320px; 
     padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
@@ -40,18 +40,18 @@
     color: var(--error-color);
     position: absolute;
     bottom: 2px;
-    transform: translateX(125px);
+    transform: translateX(95px);
   }
 
   &__btn {
     display: flex;
     box-sizing: border-box;
-    width: 350px;
+    width: 320px;
     height: 25px;
     margin-top: 20px;
-    padding-left: 125px;
+    padding-left: 95px;
     button {
-      @include form-button(90px,3px);
+      @include form-button(90px, 3px);
       margin-right: 105px;
     }
   }
@@ -62,4 +62,22 @@
   border: 1px solid var(--error-color);
   height: 25px;
   width: 225px;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px solid var(--error-color);
+  height: 26px;
+  width: 320px;
+  transform: translateY(49px);
+  color: var(--error-color);
+  background-color: var(--error-background-color);
+  border-radius: 3px;
+  span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
 }

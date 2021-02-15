@@ -7,7 +7,7 @@
   flex-direction: column;
   height: 330px;
   width: 400px;
-  background-color: var(--content-bckgr-color);
+  background-color: var(--content-background-color);
   @include section-block(15px);
 
   &__text {
