@@ -1,8 +1,4 @@
-import { LOGOUT } from "../../../actions/authActions/logoutActions";
+import { LogoutReducerAction } from "../../../actions/authActions/types/LogoutActionsTypes";
 import { StateType } from "../../../initialState";
-
-type LogoutReducerAction = {
-    type: typeof LOGOUT
-}
 
 export type LogoutReducer = (state: StateType, action: LogoutReducerAction) => StateType;

@@ -1,4 +1,9 @@
-import { AUTHORIZATION, ERROR, REDIRECT } from "../../actions/authActions/authActions";
+import {
+  AUTHORIZATION,
+  AUTH_ERROR,
+  REDIRECT,
+  LOGIN_UNMOUNT,
+} from "../../actions/authActions/authActions";
 import { initialState } from "../../initialState";
 import { AuthReducer } from "./types/AuthReducerTypes";
 
@@ -15,10 +20,16 @@ export const authReducer: AuthReducer = (state = initialState, action) => {
         isAuth: !state.isAuth,
       };
     }
-    case ERROR: {
+    case AUTH_ERROR: {
       return {
         ...state,
         errorMessage: action.payload,
+      };
+    }
+    case LOGIN_UNMOUNT: {
+      return {
+        ...state,
+        errorMessage: null,
       };
     }
     default: {

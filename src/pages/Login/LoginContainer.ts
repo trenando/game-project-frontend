@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { authorizationPost } from "../../redux/actions/authActions/authActions";
+import { authorizationPost, loginUnmountAC } from "../../redux/actions/authActions/authActions";
 import { Login } from "./Login";
 import { LoginContainerType, LoginDispatchType } from "./LoginTypes";
 
@@ -13,6 +13,9 @@ const mapDispatchToProps: LoginDispatchType = (dispatch) => {
   return {
     authorization: (values) => {
       dispatch(authorizationPost(values));
+    },
+    loginUnmount: () => {
+      dispatch(loginUnmountAC());
     },
   };
 };

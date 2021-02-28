@@ -1,39 +1,22 @@
 import React from "react";
 import style from "./LoginForm.module.scss";
-import { LoginFormEl, LoginFormTypes } from "./LoginFormTypes";
+import { LoginFormElement, LoginFormTypes } from "./LoginFormTypes";
 import { Formik, Form, Field } from "formik";
-import { validateLogin } from "./validateLogin";
+import { fields } from "./fields";
 
-const fields = [
-  {
-    title: "Email",
-    name: "email",
-    placeholder: "Email",
-    type: "email",
-    validate: validateLogin(64),
-  },
-  {
-    title: "Password",
-    name: "password",
-    placeholder: "Password",
-    type: "password",
-    validate: validateLogin(128, 8),
-  },
-];
-
-export const LoginForm: LoginFormTypes = (props) => {
+export const LoginForm: LoginFormTypes = ({ onSubmit, errorMessage }) => {
   return (
     <Formik
       initialValues={{
         email: "",
         password: "",
       }}
-      onSubmit={props.onSubmit}
+      onSubmit={onSubmit}
     >
       {({ errors, touched, isSubmitting }: any) => (
         <Form className={style.form}>
           <div className={style.form__text}>Авторизация</div>
-          {fields.map((el: LoginFormEl, index: number) => {
+          {fields.map((el: LoginFormElement, index: number) => {
             return (
               <div key={index} className={style.form__block}>
                 <label htmlFor={el.name} className={style.form__label}>
@@ -56,9 +39,9 @@ export const LoginForm: LoginFormTypes = (props) => {
               </div>
             );
           })}
-          {props.errorMessage ? (
+          {errorMessage ? (
             <div className={style.error}>
-              <span>{props.errorMessage}</span>
+              <span>{errorMessage}</span>
             </div>
           ) : null}
           <div className={style.form__btn}>

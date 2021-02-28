@@ -1,5 +1,6 @@
-@mixin field {
+@mixin field($padding-size) {
   box-sizing: border-box;
+  padding-left: $padding-size;
   border: 1px solid var(--field-border);
   &:hover {
     border-color: var(--field-active);
@@ -39,5 +40,23 @@
   &:focus {
     background-color: var(--main-border-color);
     transition: background-color 0.03s linear;
+  }
+}
+
+@mixin response($Y,$color,$background) {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  height: 26px;
+  width: 350px;
+  transform: translateY($Y);
+  border-radius: 3px;
+  border: 1px solid $color;
+  color: $color;
+  background-color: $background;
+  span {
+    font-size: 14px;
+    margin-left: 10px;
   }
 }

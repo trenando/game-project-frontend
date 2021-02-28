@@ -7,7 +7,8 @@ export const initialState: StateType = {
   postCount: 0,
   subCount: 0,
   isAuth: !!localStorage.getItem("token"),
-  errorMessage: "",
+  errorMessage: null,
+  successMessage: null,
 };
 
 export type StateType = {
@@ -19,5 +20,6 @@ export type StateType = {
   postCount: number;
   subCount: number;
   isAuth: boolean;
-  errorMessage: string;
+  errorMessage: string | null;
+  successMessage: string | null;
 };

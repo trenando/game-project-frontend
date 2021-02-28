@@ -12,6 +12,8 @@
   --field-active: #3388e2;
   --error-color: #ff0000;
   --error-background-color: #fddddd;
+  --success-color: #046104;
+  --success-background-color: #92e992;
 }
 
 body {
@@ -48,6 +50,7 @@ form {
 
 input {
   margin: 0;
+  padding: 0;
   outline: none;
 }
 

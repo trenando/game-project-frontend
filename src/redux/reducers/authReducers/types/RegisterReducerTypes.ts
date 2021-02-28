@@ -1,8 +1,4 @@
-import { REGISTRATION } from "../../../actions/authActions/registerActions";
+import { RegisterReducerAction } from "../../../actions/authActions/types/RegisterActionsTypes";
 import { StateType } from "../../../initialState";
-
-type RegisterReducerAction = {
-    type: typeof REGISTRATION
-};
 
 export type RegisterReducer = (state: StateType, action: RegisterReducerAction) => StateType;

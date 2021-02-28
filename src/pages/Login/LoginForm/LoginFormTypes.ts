@@ -2,15 +2,15 @@ import { Authorization } from "../../../redux/actions/authActions/types/AuthActi
 
 type LoginFormProps = {
   onSubmit: (values: Authorization) => void;
-  errorMessage: string;
+  errorMessage: string | null;
 };
 
-export type LoginFormEl = {
+export type LoginFormElement = {
   title: string;
   name: string;
   placeholder: string;
   type: string;
-  validate?: any;
+  validate: (value: string) => string | undefined;
 };
 
 export type ValidateLogin = (
