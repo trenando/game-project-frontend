@@ -1,9 +1,6 @@
 import { Dispatch } from "redux";
+import { ActionFunction, PayloadActionFunction } from "../../../GlobalReduxTypes";
 import { AUTHORIZATION, AUTH_ERROR, LOGIN_UNMOUNT, REDIRECT } from "../authActions";
-
-interface IAction<T> {
-  (): T;
-};
 
 type AuthType = {
   type: typeof AUTHORIZATION;
@@ -24,10 +21,10 @@ export type RedirectType = {
 
 type AuthPostActions = AuthType | RedirectType | ErrorType;
 
-export type AuthorizationAC = IAction<AuthType>;
-export type RedirectAC = IAction<RedirectType>;
-export type LoginUnmountAC = IAction<LoginUnmount>;
-export type AuthErrorAC = (payload: string | null) => ErrorType;
+export type AuthorizationAC = ActionFunction<AuthType>;
+export type RedirectAC = ActionFunction<RedirectType>;
+export type LoginUnmountAC = ActionFunction<LoginUnmount>;
+export type AuthErrorAC = PayloadActionFunction<ErrorType, string | null>;
 
 export type Authorization = {
   email: string;

@@ -1,5 +1,5 @@
 import { LOGOUT } from "../../actions/authActions/logoutActions";
-import { initialState } from "../../initialState";
+import { initialState } from "../../state/initialState";
 import { LogoutReducer } from "./types/LogoutReducerTypes";
 
 export const logoutReducer:LogoutReducer = (state = initialState, action) => {

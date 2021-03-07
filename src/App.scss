@@ -37,6 +37,12 @@ a {
   color: var(--second-text-color);
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 button {
   border: none;
   cursor: pointer;
@@ -48,7 +54,8 @@ form {
   box-sizing: border-box;
 }
 
-input {
+input,
+select {
   margin: 0;
   padding: 0;
   outline: none;

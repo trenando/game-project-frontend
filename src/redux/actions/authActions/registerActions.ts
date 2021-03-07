@@ -15,11 +15,11 @@ export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE";
 const registrationAC: RegistrationAC = () => ({ type: REGISTRATION });
 const registerErrorAC: RegisterErrorAC = (payload) => ({
   type: ERROR_MESSAGE,
-  payload: payload,
+  payload,
 });
 const registerSuccessAC: RegisterSuccessAC = (payload) => ({
   type: SUCCESS_MESSAGE,
-  payload: payload,
+  payload,
 });
 
 export const registerUnmountAC: RegisterUnmountAC = () => ({ type: REGISTER_UNMOUNT });

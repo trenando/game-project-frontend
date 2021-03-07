@@ -15,7 +15,7 @@ export const LOGIN_UNMOUNT = "LOGIN_UNMOUNT";
 const authorizationAC: AuthorizationAC = () => ({ type: AUTHORIZATION });
 const authErrorAC: AuthErrorAC = (payload) => ({
   type: AUTH_ERROR,
-  payload: payload,
+  payload,
 });
 export const redirectAC: RedirectAC = () => ({ type: REDIRECT });
 export const loginUnmountAC: LoginUnmountAC = () => ({ type: LOGIN_UNMOUNT });

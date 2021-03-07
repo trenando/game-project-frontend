@@ -7,7 +7,7 @@ import "./App.scss";
 import { HeaderContainer } from "./pages/Header/HeaderContainer";
 import { Footer } from "./pages/Footer/Footer";
 
-export const App: React.FC<object> = () => {
+export const App: React.FC<{}> = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>

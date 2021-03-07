@@ -1,5 +1,5 @@
 import { ProfileReducerAction } from "../../../actions/profileActions/types/ProfileActionsTypes";
-import { StateType } from "../../../initialState";
+import { StateType } from "../../../state/stateTypes";
 
 export type UserProfileData = {
   login: string;

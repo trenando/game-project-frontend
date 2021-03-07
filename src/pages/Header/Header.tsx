@@ -13,7 +13,7 @@ export const Header: HeaderType = ({ isAuth, logout }) => {
     <header className={style.header}>
       <nav className={style.nav}>
         <div className={style.link__home}>
-          <Link to="/" className={style.link}>
+          <Link to="/?page=1&limit=10" className={style.link}>
             {route.home.name}
           </Link>
         </div>

@@ -1,0 +1,8 @@
+@import "../../../mixins.scss";
+
+.profile {
+  @include section-block(15px);
+  box-sizing: border-box;
+  height: 450px;
+  width: 250px;
+}

@@ -4,7 +4,7 @@ import {
   REDIRECT,
   LOGIN_UNMOUNT,
 } from "../../actions/authActions/authActions";
-import { initialState } from "../../initialState";
+import { initialState } from "../../state/initialState";
 import { AuthReducer } from "./types/AuthReducerTypes";
 
 export const authReducer: AuthReducer = (state = initialState, action) => {

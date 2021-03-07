@@ -32,12 +32,14 @@
     label {
       height: 25px;
       padding-left: 5px;
+      cursor: pointer;
     }
   }
 
   &__label {
     display: flex;
     align-items: center;
+    cursor: pointer;
     span {
       display: flex;
     }
@@ -68,6 +70,7 @@
     width: 100px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     span {
       height: 25px;
     }

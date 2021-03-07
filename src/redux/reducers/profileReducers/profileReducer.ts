@@ -1,5 +1,5 @@
 import { USER_PROFILE } from "../../actions/profileActions/profileActions";
-import { initialState } from "../../initialState";
+import { initialState } from "../../state/initialState";
 import { ProfileReducer } from "./types/ProfileReducerType";
 
 export const profileReducer: ProfileReducer = (state = initialState, action) => {

@@ -1,8 +1,8 @@
 @import "../../mixins.scss";
 
-.content{
-    @include section-block(15px);
-    margin: 0 auto;
-    width: 1450px;
-    min-height: calc(100vh - 150px);
+.content {
+  width: 1450px;
+  margin: 0 auto;
+  min-height: calc(100vh - 150px);
+  display: flex;
 }

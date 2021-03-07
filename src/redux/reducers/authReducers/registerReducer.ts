@@ -4,7 +4,7 @@ import {
   SUCCESS_MESSAGE,
   REGISTER_UNMOUNT
 } from "../../actions/authActions/registerActions";
-import { initialState } from "../../initialState";
+import { initialState } from "../../state/initialState";
 import { RegisterReducer } from "./types/RegisterReducerTypes";
 
 export const registerReducer: RegisterReducer = (state = initialState, action) => {

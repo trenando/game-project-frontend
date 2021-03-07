@@ -1,9 +1,6 @@
 import { Dispatch } from "redux";
+import { ActionFunction, PayloadActionFunction } from "../../../GlobalReduxTypes";
 import { REGISTRATION, ERROR_MESSAGE, SUCCESS_MESSAGE, REGISTER_UNMOUNT } from "../registerActions";
-
-interface IAction<T> {
-  (): T;
-}
 
 type Registration = {
   type: typeof REGISTRATION;
@@ -30,10 +27,10 @@ export type Register = {
   name: string;
 };
 
-export type RegistrationAC = IAction<Registration>;
-export type RegisterUnmountAC = IAction<RegisterUnmount>;
-export type RegisterErrorAC = (payload: string | null) => ErrorType;
-export type RegisterSuccessAC = (payload: string | null) => SuccessType;
+export type RegistrationAC = ActionFunction<Registration>;
+export type RegisterUnmountAC = ActionFunction<RegisterUnmount>;
+export type RegisterErrorAC = PayloadActionFunction<ErrorType, string | null>;
+export type RegisterSuccessAC = PayloadActionFunction<SuccessType, string | null>;
 
 export type RegisterReducerAction = Registration | ErrorType | SuccessType | RegisterUnmount;
 

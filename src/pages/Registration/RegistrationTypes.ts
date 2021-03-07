@@ -36,4 +36,5 @@ export type RegistrationDispatchTypes = (
   dispatch: ThunkDispatch<Register, void, Action<RegisterThunk> | RegisterUnmount>
 ) => {
   registration: (values: Register) => void;
+  registerUnmount: () => void;
 };
