@@ -1,18 +1,18 @@
 import { AxiosResponse } from "axios";
 
 type ItemData = {
-  title: string;
-  text: string;
+  postTitle: string;
+  postText: string;
 };
 
 type PostItem = {
   postId: number;
-  title: string;
+  postTitle: string;
   login: string;
   date: string;
 };
 
-type ListResponse = {
+export type ListResponse = {
   postsCount: number;
   posts: PostItem[];
 };
@@ -23,6 +23,6 @@ export type ListData = {
 };
 
 export type PostsAPI = {
-  postItem({ title, text }: ItemData): Promise<AxiosResponse<string>>;
+  postItem({ postTitle, postText }: ItemData): Promise<AxiosResponse<string>>;
   getList({ page, limit }: ListData): Promise<AxiosResponse<ListResponse>>;
 };

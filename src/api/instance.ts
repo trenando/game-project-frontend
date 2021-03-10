@@ -25,7 +25,10 @@ const isExpired: IsExpired = async (token: string | null) => {
   let expireTime: number = JSON.parse(atob(token.split(".")[1])).exp;
   expireTime *= 1000;
   if (Date.now() > expireTime) {
-    const updateToken: AxiosResponse<RefreshTokenResponse> = await axios.post("auth/token", {
+    const instance: AxiosInstance = axios.create({
+      baseURL: "/",
+    });
+    const updateToken: AxiosResponse<RefreshTokenResponse> = await instance.post("auth/token", {
       refreshToken: localStorage.getItem("refreshToken"),
     });
     localStorage.setItem("token", updateToken.data.accessToken);

@@ -4,8 +4,8 @@ import { PostsAPI } from "./types/PostsApiTypes";
 const instance = axiosInstance("posts/");
 
 export const postsAPI: PostsAPI = {
-  async postItem({ title, text }) {
-    const res = await instance.post("item", { title, text });
+  async postItem({ postTitle, postText }) {
+    const res = await instance.post("item", { postTitle, postText });
     return res;
   },
   async getList({ page, limit }) {
