@@ -12,6 +12,7 @@ export const Router: React.FC<object> = () => {
       {isAuth ? (
         <React.Fragment>
           <Route exact strict path={route.home.path} component={route.home.component} />
+          <Route exact strict path={route.createPost.path} component={route.createPost.component} />
           <Route exact strict path={route.profile.path} component={route.profile.component} />
           <Route exact strict path={[route.login.path, route.registration.path]}>
             <Redirect to={route.profile.path} />
@@ -20,7 +21,7 @@ export const Router: React.FC<object> = () => {
       ) : (
         <React.Fragment>
           <Route exact strict path={route.home.path} component={route.home.component} />
-          <Route exact strict path={route.profile.path}>
+          <Route exact strict path={[route.profile.path, route.createPost.path]}>
             <Redirect to={route.login.path} />
           </Route>
           <Route exact strict path={route.login.path} component={route.login.component} />

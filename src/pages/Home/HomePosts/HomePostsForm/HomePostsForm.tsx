@@ -1,6 +1,6 @@
 import { Form, Formik, Field } from "formik";
 import React from "react";
-import style from "./PostsForm.module.scss";
+import style from "./HomePostsForm.module.scss";
 
 export const PostsForm = ({ onSearchSubmit }: any) => {
   return (

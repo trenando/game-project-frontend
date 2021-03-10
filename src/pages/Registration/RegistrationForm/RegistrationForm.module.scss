@@ -10,7 +10,7 @@
   background-color: var(--content-background-color);
   @include section-block(15px);
 
-  &__text {
+  &__title {
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 24px;
@@ -106,6 +106,8 @@
 
 .field__error {
   box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
   padding-left: 4px;
   border: 1px solid var(--error-color);
   height: 25px;
@@ -113,8 +115,10 @@
 }
 
 .response__error {
-  @include response(139px, var(--error-color), var(--error-background-color));
+  transform: translateY(139px);
+  @include response(26px, 350px, var(--error-color), var(--error-background-color));
 }
-.response__success{
-  @include response(139px, var(--success-color), var(--success-background-color));
+.response__success {
+  transform: translateY(139px);
+  @include response(26px, 350px, var(--success-color), var(--success-background-color));
 }

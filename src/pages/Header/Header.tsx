@@ -12,15 +12,20 @@ export const Header: HeaderType = ({ isAuth, logout }) => {
   return (
     <header className={style.header}>
       <nav className={style.nav}>
-        <div className={style.link__home}>
-          <Link to="/?page=1&limit=10" className={style.link}>
+        <div className={style.link__block}>
+          <Link to={route.home.link} className={style.link}>
             {route.home.name}
           </Link>
+          {isAuth ? (
+            <Link to={route.createPost.link} className={style.link}>
+              {route.createPost.name}
+            </Link>
+          ) : null}
         </div>
-        <div className={style.link__user}>
+        <div className={style.link__block}>
           {isAuth ? (
             <React.Fragment>
-              <Link to={route.profile.path} className={style.link}>
+              <Link to={route.profile.link} className={style.link}>
                 {route.profile.name}
               </Link>
               <button className={style.button} onClick={onClick}>
@@ -29,10 +34,10 @@ export const Header: HeaderType = ({ isAuth, logout }) => {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              <Link to={route.login.path} className={style.link}>
+              <Link to={route.login.link} className={style.link}>
                 {route.login.name}
               </Link>
-              <Link to={route.registration.path} className={style.link}>
+              <Link to={route.registration.link} className={style.link}>
                 {route.registration.name}
               </Link>
             </React.Fragment>

@@ -2,9 +2,9 @@ import React from "react";
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 
-export type PostsElement = {
+export type HomePostsElement = {
   postId: number;
-  title: string;
+  postTitle: string;
   login: string;
   date: string;
 };
@@ -14,28 +14,31 @@ export type QueryParams = {
   limit: string | null;
 };
 
-type PostsProps = {
-  posts: PostsElement[];
+type HomePostsProps = {
+  posts: HomePostsElement[];
   postsList: (query: QueryParams) => void;
+  allPostsCount: number;
 };
 
 type PostsState = {
   postsList: {
-    posts: PostsElement[];
+    posts: HomePostsElement[];
+    allPostsCount: number;
   };
 };
 
 export type UseQuery = () => URLSearchParams;
 
-export type PostsType = React.FC<PostsProps>;
+export type HomePostsType = React.FC<HomePostsProps>;
 
-export type PostsContainerProps = ({
+export type HomePostsContainerProps = ({
   postsList,
 }: PostsState) => {
-  posts: PostsElement[];
+  posts: HomePostsElement[];
+  allPostsCount: number;
 };
 
-export type PostsDispatchType = (
+export type HomePostsDispatchType = (
   dispatch: ThunkDispatch<QueryParams, void, Action<any>>
 ) => {
   postsList: (query: QueryParams) => void;

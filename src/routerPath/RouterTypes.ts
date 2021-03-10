@@ -8,6 +8,7 @@ type ComponentType<T> = ConnectedComponent<React.FC<T>, T>;
 
 type RouteElement<T> = {
   path: string;
+  link: string;
   name: string;
   component: ComponentType<T> | React.FC<T>;
 };
@@ -17,6 +18,7 @@ type RouteElements = {
   profile: RouteElement<ProfileProps>;
   login: RouteElement<LoginProps>;
   registration: RouteElement<RegistrationProps>;
+  createPost: RouteElement<any>;
 };
 
 export type RouteType = RouteElements;

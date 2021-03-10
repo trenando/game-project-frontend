@@ -15,7 +15,7 @@ export const LoginForm: LoginFormTypes = ({ onSubmit, errorMessage }) => {
     >
       {({ errors, touched, isSubmitting }: any) => (
         <Form className={style.form}>
-          <div className={style.form__text}>Авторизация</div>
+          <h2 className={style.form__title}>Авторизация</h2>
           {fields.map((el: LoginFormElement, index: number) => {
             return (
               <div key={index} className={style.form__block}>

@@ -1,5 +1,7 @@
 @mixin field($padding-size) {
   box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
   padding-left: $padding-size;
   border: 1px solid var(--field-border);
   &:hover {
@@ -43,14 +45,13 @@
   }
 }
 
-@mixin response($Y,$color,$background) {
+@mixin response($heigth,$width,$color,$background) {
   display: flex;
   align-items: center;
   position: absolute;
   box-sizing: border-box;
-  height: 26px;
-  width: 350px;
-  transform: translateY($Y);
+  height: $heigth;
+  width: $width;
   border-radius: 3px;
   border: 1px solid $color;
   color: $color;

@@ -1,4 +1,4 @@
-import { PostsElement } from "../../pages/Home/Posts/PostsTypes";
+import { HomePostsElement } from "../../pages/Home/HomePosts/HomePostsTypes";
 
 export interface UserState {
   login: string | null;
@@ -15,6 +15,7 @@ export interface StateType extends UserState {
   errorMessage: string | null;
   successMessage: string | null;
   allPostsCount: number;
-  posts: PostsElement[];
-  searchValue: string | null;
+  posts: HomePostsElement[];
+  postTitle: string | null;
+  postText: string | null;
 }

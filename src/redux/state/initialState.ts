@@ -8,5 +8,6 @@ export const initialState: StateType = {
   successMessage: null,
   allPostsCount: 0,
   posts: [],
-  searchValue: null,
+  postTitle: "",
+  postText: "",
 };

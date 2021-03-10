@@ -24,18 +24,7 @@
   align-items: center;
   height: inherit;
   padding: 0 15px;
-  &__home {
-    height: inherit;
-    border-radius: 2px;
-    a {
-      height: inherit;
-    }
-    &:hover {
-      background-color: var(--nav-hover-color);
-      transition: background-color 0.25s linear;
-    }
-  }
-  &__user {
+  &__block {
     display: flex;
     border-radius: 2px;
     height: inherit;

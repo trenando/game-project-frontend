@@ -25,7 +25,7 @@ export const RegistrationForm: RegisterFormTypes = ({ onSubmit, errorMessage, su
     >
       {({ errors, touched, isSubmitting }: any) => (
         <Form className={style.form}>
-          <div className={style.form__text}>Регистрация</div>
+          <h2 className={style.form__title}>Регистрация</h2>
           {fields.map((el: RegisterFormElement, index: number) => {
             return (
               <div key={index} className={style.form__block}>

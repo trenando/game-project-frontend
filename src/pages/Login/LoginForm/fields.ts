@@ -1,5 +1,7 @@
-import { validate } from "../../../validate/validate";
+import { Validate } from "../../../validate/validate";
 import { LoginFormElement } from "./LoginFormTypes";
+
+const validate = new Validate();
 
 export const fields: LoginFormElement[] = [
   {
@@ -7,18 +9,13 @@ export const fields: LoginFormElement[] = [
     name: "email",
     placeholder: "Email",
     type: "email",
-    validate: validate({
-      maxLength: 64,
-    }),
+    validate: (value) => validate.required().maxLength(64).validate(value),
   },
   {
     title: "Password",
     name: "password",
     placeholder: "Password",
     type: "password",
-    validate: validate({
-      maxLength: 128,
-      minLength: 8,
-    }),
+    validate: (value) => validate.required().minLength(8).maxLength(128).validate(value),
   },
 ];

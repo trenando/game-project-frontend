@@ -1,5 +1,7 @@
-import { validate } from "../../../validate/validate";
+import { Validate } from "../../../validate/validate";
 import { RegisterFormElement, RegisterFormAnotherElement } from "./RegistrationFormTypes";
+
+const validate = new Validate();
 
 export const fields: RegisterFormElement[] = [
   {
@@ -8,10 +10,7 @@ export const fields: RegisterFormElement[] = [
     placeholder: "Login",
     type: "text",
     required: true,
-    validate: validate({
-      maxLength: 64,
-      minLength: 3,
-    }),
+    validate: (value) => validate.required().minLength(3).maxLength(64).validate(value),
   },
   {
     title: "Почта",
@@ -19,9 +18,7 @@ export const fields: RegisterFormElement[] = [
     placeholder: "Email",
     type: "email",
     required: true,
-    validate: validate({
-      maxLength: 64,
-    }),
+    validate: (value) => validate.required().maxLength(64).validate(value),
   },
   {
     title: "Пароль",
@@ -29,10 +26,7 @@ export const fields: RegisterFormElement[] = [
     placeholder: "Password",
     type: "password",
     required: true,
-    validate: validate({
-      maxLength: 128,
-      minLength: 8,
-    }),
+    validate: (value) => validate.required().minLength(8).maxLength(128).validate(value),
   },
   {
     title: "Имя",
@@ -40,10 +34,7 @@ export const fields: RegisterFormElement[] = [
     placeholder: "Name",
     type: "text",
     required: true,
-    validate: validate({
-      maxLength: 64,
-      minLength: 2,
-    }),
+    validate: (value) => validate.required().minLength(2).maxLength(64).validate(value),
   },
   {
     title: "Фамилия",
@@ -51,11 +42,7 @@ export const fields: RegisterFormElement[] = [
     placeholder: "Surname",
     type: "text",
     required: false,
-    validate: validate({
-      maxLength: 64,
-      required: false,
-      minLength: 3,
-    }),
+    validate: (value) => validate.minLength(3).maxLength(64).validate(value),
   },
 ];
 
