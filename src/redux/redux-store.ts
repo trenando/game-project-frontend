@@ -6,6 +6,7 @@ import { registerReducer } from "./reducers/authReducers/registerReducer";
 import { logoutReducer } from "./reducers/authReducers/logoutReducer";
 import { postsListReducer } from "./reducers/postsReducers/postsListReducer";
 import { createPostsReducer } from "./reducers/postsReducers/createPostReducer";
+import { getPostByIdReducer } from "./reducers/postsReducers/getPostByIdReucer";
 
 const reducers = combineReducers({
   profile: profileReducer,
@@ -14,6 +15,7 @@ const reducers = combineReducers({
   logout: logoutReducer,
   postsList: postsListReducer,
   createPost: createPostsReducer,
+  postById: getPostByIdReducer,
 });
 
 export const store = createStore(reducers, applyMiddleware(thunkMiddleware));

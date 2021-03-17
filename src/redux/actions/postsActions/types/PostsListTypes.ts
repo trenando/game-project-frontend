@@ -4,21 +4,21 @@ import { QueryParams } from "../../../../pages/Home/HomePosts/HomePostsTypes";
 import { PayloadActionFunction } from "../../../GlobalReduxTypes";
 import { PAGE_INFO, POSTS_LIST } from "../postsList";
 
-export type PostsListPayload = {
+export type PostsListAction = {
   type: typeof POSTS_LIST;
   payload: ListResponse;
 };
 
-export type PageInfoPayload = {
+export type PageInfoAction = {
   type: typeof PAGE_INFO;
   payload: QueryParams;
 };
 
-type ActionPayload = PostsListPayload | PageInfoPayload;
+export type Actions = PostsListAction | PageInfoAction;
 
-export type PostsListAC = PayloadActionFunction<PostsListPayload, ListResponse>;
-export type PageInfoAC = PayloadActionFunction<PageInfoPayload, QueryParams>;
+export type PostsListAC = PayloadActionFunction<PostsListAction, ListResponse>;
+export type PageInfoAC = PayloadActionFunction<PageInfoAction, QueryParams>;
 
-export type PostsListGet = (query: QueryParams) => (dispatch: Dispatch<ActionPayload>) => void;
+export type PostsListGet = (query: QueryParams) => (dispatch: Dispatch<Actions>) => void;
 
-export type PostsListReducerAction = ActionPayload;
+export type PostsListReducerAction = Actions;

@@ -5,7 +5,7 @@ import {
   Authorization,
 } from "../../redux/actions/authActions/types/AuthActionsTypes";
 import { Action } from "redux";
-import { LoginUnmount } from "../../redux/actions/authActions/types/AuthActionsTypes";
+import { LoginUnmountAction } from "../../redux/actions/authActions/types/AuthActionsTypes";
 
 type LoginState = {
   auth: {
@@ -24,7 +24,7 @@ export type LoginProps = {
 export type OnSubmit = (values: Authorization) => void;
 
 export type LoginDispatchType = (
-  dispatch: ThunkDispatch<Authorization, void, Action<AuthorizationPost> | LoginUnmount>
+  dispatch: ThunkDispatch<Authorization, void, Action<AuthorizationPost> | LoginUnmountAction>
 ) => {
   authorization: (values: Authorization) => void;
   loginUnmount: () => void;

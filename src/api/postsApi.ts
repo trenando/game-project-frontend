@@ -17,4 +17,8 @@ export const postsAPI: PostsAPI = {
     });
     return res;
   },
+  async getPostById({ postId }) {
+    const res = await instance.get(postId);
+    return res;
+  },
 };

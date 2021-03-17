@@ -12,4 +12,10 @@ export const initialState: StateType = {
   postText: "",
   currentPage: 0,
   postsPerPage: 1,
+  postId: {
+    postTitle: "",
+    postText: "",
+    login: null,
+    date: null,
+  },
 };

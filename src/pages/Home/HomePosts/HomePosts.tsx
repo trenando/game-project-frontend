@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory, useLocation } from "react-router";
+import { Link } from "react-router-dom";
 import style from "./HomePosts.module.scss";
 import { PostsForm } from "./HomePostsForm/HomePostsForm";
 import { ChangeUrl, HomePostsElement, HomePostsType, QueryParams } from "./HomePostsTypes";
@@ -24,7 +25,7 @@ export const HomePosts: HomePostsType = ({
     postsList(queryParams);
   }, [location, postsList]);
 
-  const changeUrl:ChangeUrl = (page) => {
+  const changeUrl: ChangeUrl = (page) => {
     history.push(`/?page=${page}&limit=${postsPerPage}`);
   };
 
@@ -41,7 +42,9 @@ export const HomePosts: HomePostsType = ({
                     <img src="http://placehold.it/50x50" alt="img" />
                   </div>
                   <div className={style.posts__infoblock}>
-                    <h3>{el.postTitle}</h3>
+                    <Link to={`/posts/${el.postId}`} className={style.posts__link}>
+                      <h3>{el.postTitle}</h3>
+                    </Link>
                     <div className={style.posts__userinfo}>
                       <span className={style.posts__login}>{el.login}</span>
                       <span className={style.posts__date}>{el.date}</span>

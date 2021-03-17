@@ -17,6 +17,7 @@ export const Router: React.FC<object> = () => {
           <Route exact strict path={[route.login.path, route.registration.path]}>
             <Redirect to={route.profile.path} />
           </Route>
+          <Route path={route.post.path} component={route.post.component} />
         </React.Fragment>
       ) : (
         <React.Fragment>
@@ -31,6 +32,7 @@ export const Router: React.FC<object> = () => {
             path={route.registration.path}
             component={route.registration.component}
           />
+          <Route path={route.post.path} component={route.post.component} />
         </React.Fragment>
       )}
     </Switch>

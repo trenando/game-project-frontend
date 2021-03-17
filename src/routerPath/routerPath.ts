@@ -4,6 +4,7 @@ import { ProfileContainer } from "../pages/Profile/ProfileContainer";
 import { RouteType } from "./RouterTypes";
 import { Home } from "../pages/Home/Home";
 import { CreatePostContainer } from "../pages/CreatePost/CreatePostContainer";
+import { PostContainer } from "../pages/Post/PostContainer";
 
 export const route: RouteType = {
   home: {
@@ -35,5 +36,9 @@ export const route: RouteType = {
     link: "/post/create",
     name: "Написать пост",
     component: CreatePostContainer,
+  },
+  post: {
+    path: "/posts/:postId",
+    component: PostContainer,
   },
 };

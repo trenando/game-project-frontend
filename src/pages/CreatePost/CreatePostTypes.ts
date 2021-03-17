@@ -2,7 +2,7 @@ import React from "react";
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 
-type CreatePostProps = {
+export type CreatePostProps = {
   createPost: (values: ValuesPayload) => void;
   postTitle: string;
   postText: string;

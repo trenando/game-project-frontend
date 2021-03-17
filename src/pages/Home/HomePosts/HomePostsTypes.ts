@@ -1,6 +1,7 @@
 import React from "react";
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
+import { Actions } from "../../../redux/actions/postsActions/types/PostsListTypes";
 
 interface HomeStateProps {
   posts: HomePostsElement[];
@@ -10,7 +11,7 @@ interface HomeStateProps {
 }
 
 export type HomePostsElement = {
-  postId: number;
+  postId: string;
   postTitle: string;
   login: string;
   date: string;
@@ -36,7 +37,7 @@ export type HomePostsType = React.FC<HomePostsProps>;
 export type HomePostsContainerProps = ({ postsList }: PostsState) => HomeStateProps;
 
 export type HomePostsDispatchType = (
-  dispatch: ThunkDispatch<QueryParams, void, Action<any>>
+  dispatch: ThunkDispatch<QueryParams, void, Action<Actions>>
 ) => {
   postsList: (query: QueryParams) => void;
 };

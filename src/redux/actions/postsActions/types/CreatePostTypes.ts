@@ -3,20 +3,20 @@ import { ValuesPayload } from "../../../../pages/CreatePost/CreatePostTypes";
 import { PayloadActionFunction } from "../../../GlobalReduxTypes";
 import { CREATED_POST, ERROR_POST } from "../createPost";
 
-type CreatedPostPayload = {
+type CreatedPostAction = {
   type: typeof CREATED_POST;
   payload: string | null;
 };
 
-type ErrorPostPayload = {
+type ErrorPostAction = {
   type: typeof ERROR_POST;
   payload: string | null;
 };
 
-export type CreatedPostAC = PayloadActionFunction<CreatedPostPayload, string | null>;
-export type ErrorPostAC = PayloadActionFunction<ErrorPostPayload, string | null>;
+export type CreatedPostAC = PayloadActionFunction<CreatedPostAction, string | null>;
+export type ErrorPostAC = PayloadActionFunction<ErrorPostAction, string | null>;
 
-export type CreatePostReducerActions = CreatedPostPayload | ErrorPostPayload;
+export type CreatePostReducerActions = CreatedPostAction | ErrorPostAction;
 
 export type CreatePost = (
   values: ValuesPayload

@@ -2,21 +2,21 @@ import { Dispatch } from "redux";
 import { ActionFunction, PayloadActionFunction } from "../../../GlobalReduxTypes";
 import { REGISTRATION, ERROR_MESSAGE, SUCCESS_MESSAGE, REGISTER_UNMOUNT } from "../registerActions";
 
-type Registration = {
+type RegistrationAction = {
   type: typeof REGISTRATION;
 };
 
-type ErrorType = {
+type ErrorAction = {
   type: typeof ERROR_MESSAGE;
   payload: string | null;
 };
 
-type SuccessType = {
+type SuccessAction = {
   type: typeof SUCCESS_MESSAGE;
   payload: string | null;
 };
 
-export type RegisterUnmount = {
+export type RegisterUnmountAction = {
   type: typeof REGISTER_UNMOUNT;
 };
 
@@ -27,12 +27,16 @@ export type Register = {
   name: string;
 };
 
-export type RegistrationAC = ActionFunction<Registration>;
-export type RegisterUnmountAC = ActionFunction<RegisterUnmount>;
-export type RegisterErrorAC = PayloadActionFunction<ErrorType, string | null>;
-export type RegisterSuccessAC = PayloadActionFunction<SuccessType, string | null>;
+export type RegistrationAC = ActionFunction<RegistrationAction>;
+export type RegisterUnmountAC = ActionFunction<RegisterUnmountAction>;
+export type RegisterErrorAC = PayloadActionFunction<ErrorAction, string | null>;
+export type RegisterSuccessAC = PayloadActionFunction<SuccessAction, string | null>;
 
-export type RegisterReducerAction = Registration | ErrorType | SuccessType | RegisterUnmount;
+export type RegisterReducerAction =
+  | RegistrationAction
+  | ErrorAction
+  | SuccessAction
+  | RegisterUnmountAction;
 
 export type RegisterThunk = (
   values: Register

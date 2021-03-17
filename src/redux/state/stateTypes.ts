@@ -20,4 +20,10 @@ export interface StateType extends UserState {
   postText: string | null;
   currentPage: number;
   postsPerPage: number;
+  postId: {
+    postTitle: string,
+    postText: string,
+    login: string | null,
+    date: string | null,
+  };
 }

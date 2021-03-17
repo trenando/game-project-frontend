@@ -6,9 +6,9 @@ import { HomePostsContainer } from "./HomePosts/HomePostsContainer";
 
 export const Home: HomeType = () => {
   return (
-    <div className={style.content}>
+    <section className={style.content}>
       <HomeProfile />
       <HomePostsContainer />
-    </div>
+    </section>
   );
 };

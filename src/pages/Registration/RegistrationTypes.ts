@@ -4,7 +4,7 @@ import { ThunkDispatch } from "redux-thunk";
 import {
   RegisterThunk,
   Register,
-  RegisterUnmount,
+  RegisterUnmountAction,
 } from "../../redux/actions/authActions/types/RegisterActionsTypes";
 
 type RegisterState = {
@@ -33,7 +33,7 @@ export type RegisterContainerType = ({
 };
 
 export type RegistrationDispatchTypes = (
-  dispatch: ThunkDispatch<Register, void, Action<RegisterThunk> | RegisterUnmount>
+  dispatch: ThunkDispatch<Register, void, Action<RegisterThunk> | RegisterUnmountAction>
 ) => {
   registration: (values: Register) => void;
   registerUnmount: () => void;
