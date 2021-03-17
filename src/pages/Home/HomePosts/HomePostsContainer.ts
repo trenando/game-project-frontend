@@ -7,6 +7,8 @@ const mapStateToProps: HomePostsContainerProps = ({ postsList }) => {
   return {
     posts: postsList.posts,
     allPostsCount: postsList.allPostsCount,
+    currentPage: postsList.currentPage,
+    postsPerPage: postsList.postsPerPage,
   };
 };
 

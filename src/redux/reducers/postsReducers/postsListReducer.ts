@@ -1,4 +1,4 @@
-import { POSTS_LIST } from "../../actions/postsActions/postsList";
+import { PAGE_INFO, POSTS_LIST } from "../../actions/postsActions/postsList";
 import { initialState } from "../../state/initialState";
 import { PostsListReducer } from "./types/PostsListReducerTypes";
 
@@ -10,6 +10,16 @@ export const postsListReducer: PostsListReducer = (state = initialState, action)
         ...state,
         allPostsCount: postsCount,
         posts,
+      };
+    }
+    case PAGE_INFO: {
+      const { page, limit } = action.payload;
+      const currentPage: number = page ? parseInt(page) : 1;
+      const postsPerPage: number = limit ? parseInt(limit) : 10;
+      return {
+        ...state,
+        currentPage,
+        postsPerPage,
       };
     }
     default: {

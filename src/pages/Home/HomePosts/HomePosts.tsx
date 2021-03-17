@@ -1,11 +1,19 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import style from "./HomePosts.module.scss";
 import { PostsForm } from "./HomePostsForm/HomePostsForm";
-import { HomePostsElement, HomePostsType, QueryParams } from "./HomePostsTypes";
+import { ChangeUrl, HomePostsElement, HomePostsType, QueryParams } from "./HomePostsTypes";
+import { Paginator } from "./Paginator/Paginator";
 
-export const HomePosts: HomePostsType = ({ posts, postsList, allPostsCount }) => {
+export const HomePosts: HomePostsType = ({
+  posts,
+  postsList,
+  allPostsCount,
+  currentPage,
+  postsPerPage,
+}) => {
   const location = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
     const query = new URLSearchParams(location.search);
@@ -16,12 +24,9 @@ export const HomePosts: HomePostsType = ({ posts, postsList, allPostsCount }) =>
     postsList(queryParams);
   }, [location, postsList]);
 
-  /**
-   * onClick Для h3 и posts__login
-   * Необходимо реализовать при клике на h3
-   * открытие поста по id а при клике на
-   * posts__login открывать пользователя
-   * */
+  const changeUrl:ChangeUrl = (page) => {
+    history.push(`/?page=${page}&limit=${postsPerPage}`);
+  };
 
   return (
     <div className={style.posts}>
@@ -47,10 +52,12 @@ export const HomePosts: HomePostsType = ({ posts, postsList, allPostsCount }) =>
             })}
         </ul>
       </div>
-      <div className={style.posts__pages}>
-        <span>1</span>
-        <span>2</span>
-      </div>
+      <Paginator
+        allPostsCount={allPostsCount}
+        currentPage={currentPage}
+        postsPerPage={postsPerPage}
+        changeUrl={changeUrl}
+      />
     </div>
   );
 };

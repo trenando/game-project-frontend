@@ -1,0 +1,25 @@
+@import "../../../../mixins.scss";
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    margin-right: 5px;
+    @include form-button(25px, 100%);
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      background-color: #4a5663;
+    }
+  }
+  &__dots {
+    height: 25px;
+    margin-right: 10px;
+  }
+}

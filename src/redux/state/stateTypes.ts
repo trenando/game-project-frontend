@@ -18,4 +18,6 @@ export interface StateType extends UserState {
   posts: HomePostsElement[];
   postTitle: string | null;
   postText: string | null;
+  currentPage: number;
+  postsPerPage: number;
 }

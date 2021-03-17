@@ -2,6 +2,13 @@ import React from "react";
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 
+interface HomeStateProps {
+  posts: HomePostsElement[];
+  allPostsCount: number;
+  currentPage: number;
+  postsPerPage: number;
+}
+
 export type HomePostsElement = {
   postId: number;
   postTitle: string;
@@ -14,32 +21,24 @@ export type QueryParams = {
   limit: string | null;
 };
 
-type HomePostsProps = {
-  posts: HomePostsElement[];
+interface HomePostsProps extends HomeStateProps {
   postsList: (query: QueryParams) => void;
-  allPostsCount: number;
-};
+}
 
 type PostsState = {
-  postsList: {
-    posts: HomePostsElement[];
-    allPostsCount: number;
-  };
+  postsList: HomeStateProps;
 };
 
 export type UseQuery = () => URLSearchParams;
 
 export type HomePostsType = React.FC<HomePostsProps>;
 
-export type HomePostsContainerProps = ({
-  postsList,
-}: PostsState) => {
-  posts: HomePostsElement[];
-  allPostsCount: number;
-};
+export type HomePostsContainerProps = ({ postsList }: PostsState) => HomeStateProps;
 
 export type HomePostsDispatchType = (
   dispatch: ThunkDispatch<QueryParams, void, Action<any>>
 ) => {
   postsList: (query: QueryParams) => void;
 };
+
+export type ChangeUrl = (page: string) => void;

@@ -10,4 +10,6 @@ export const initialState: StateType = {
   posts: [],
   postTitle: "",
   postText: "",
+  currentPage: 0,
+  postsPerPage: 1,
 };
