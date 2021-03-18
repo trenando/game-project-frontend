@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./Paginator.module.scss";
 import { paginatorLinks } from "./paginatorLinks";
-import { OnClick, PaginatorType } from "./PaginatorTypes";
+import { OnClick, PaginatorFunction } from "./PaginatorTypes";
 
-export const Paginator: PaginatorType = ({
+export const Paginator: PaginatorFunction = ({
   allPostsCount,
   currentPage,
   postsPerPage,

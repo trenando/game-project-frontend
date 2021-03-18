@@ -1,24 +1,24 @@
 import { AxiosResponse } from "axios";
+import { AuthorizationValues } from "../../pages/Login/LoginTypes";
+import { RegistrationValues } from "../../pages/Registration/RegistrationTypes";
 
-export type LoginResponse = {
-    accessToken: string,
-    refreshToken: string
-} | string;
-
-type LoginData = {
-    email: string,
-    password: string
-};
-
-type RegisterData = {
-    login: string,
-    email: string,
-    password: string,
-    name:string
-};
+export type LoginResponse =
+  | {
+      accessToken: string;
+      refreshToken: string;
+    }
+  | string;
 
 export type AuthAPI = {
-    postLogin({ email, password }: LoginData): Promise<AxiosResponse<LoginResponse>>;
-    postRegister({ login, email, password, name }: RegisterData): Promise<AxiosResponse<string>>;
-    deleteLogin(): Promise<AxiosResponse<string>>;
+  postLogin({ email, password }: AuthorizationValues): Promise<AxiosResponse<LoginResponse>>;
+  postRegister({
+    login,
+    email,
+    password,
+    name,
+    surname,
+    gender,
+    age,
+  }: RegistrationValues): Promise<AxiosResponse<string>>;
+  deleteLogin(): Promise<AxiosResponse<string>>;
 };

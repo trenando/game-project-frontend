@@ -20,4 +20,4 @@ export type CreatePostFormElement = {
 
 export type Fields = CreatePostFormElement[];
 
-export type CreatePostFormType = React.FC<CreatePostFormProps>;
+export type CreatePostFormFunction = React.FC<CreatePostFormProps>;

@@ -2,39 +2,52 @@ import { Action } from "redux";
 import React from "react";
 import { ThunkDispatch } from "redux-thunk";
 import {
-  RegisterThunk,
-  Register,
-  RegisterUnmountAction,
-} from "../../redux/actions/authActions/types/RegisterActionsTypes";
+  RegistrationThunkCreator,
+  UnmountRegistrationAction,
+} from "../../redux/actions/authActions/types/RegistrationActionsTypes";
 
-type RegisterState = {
-  register: {
+type RegistrationState = {
+  registration: {
     errorMessage: string | null;
     successMessage: string | null;
   };
 };
 
+export type RegistrationValues = {
+  login: string;
+  email: string;
+  password: string;
+  name: string;
+  surname?: string;
+  gender?: string;
+  age?: number;
+};
+
 export type RegistrationProps = {
-  registration: (values: Register) => void;
-  registerUnmount: () => void;
+  registration: (values: RegistrationValues) => void;
+  unmountRegistration: () => void;
   errorMessage: string | null;
   successMessage: string | null;
 };
 
-export type OnRegisterSubmit = (values: Register) => void;
+export type OnSubmit = (values: RegistrationValues) => void;
 
-export type RegistrationType = React.FC<RegistrationProps>;
+export type RegistrationFunction = React.FC<RegistrationProps>;
 
-export type RegisterContainerType = ({
-  register,
-}: RegisterState) => {
+export type RegistrationStateToProps = ({
+  registration,
+}: RegistrationState) => {
   errorMessage: string | null;
   successMessage: string | null;
 };
 
-export type RegistrationDispatchTypes = (
-  dispatch: ThunkDispatch<Register, void, Action<RegisterThunk> | RegisterUnmountAction>
+export type RegistrationDispatch = (
+  dispatch: ThunkDispatch<
+    RegistrationValues,
+    void,
+    Action<RegistrationThunkCreator> | UnmountRegistrationAction
+  >
 ) => {
-  registration: (values: Register) => void;
-  registerUnmount: () => void;
+  registration: (values: RegistrationValues) => void;
+  unmountRegistration: () => void;
 };

@@ -1,6 +1,7 @@
 import { Dispatch } from "redux";
+import { AuthorizationValues } from "../../../../pages/Login/LoginTypes";
 import { ActionFunction, PayloadActionFunction } from "../../../GlobalReduxTypes";
-import { AUTHORIZATION, AUTH_ERROR, LOGIN_UNMOUNT, REDIRECT } from "../authActions";
+import { AUTHORIZATION, AUTH_ERROR, UNMOUNT_LOGIN, REDIRECT } from "../authActions";
 
 type AuthAction = {
   type: typeof AUTHORIZATION;
@@ -11,8 +12,8 @@ type ErrorAction = {
   payload: string | null;
 };
 
-export type LoginUnmountAction = {
-  type: typeof LOGIN_UNMOUNT;
+export type UnmountLoginAction = {
+  type: typeof UNMOUNT_LOGIN;
 };
 
 export type RedirectAction = {
@@ -23,16 +24,11 @@ type AuthPostActions = AuthAction | RedirectAction | ErrorAction;
 
 export type AuthorizationAC = ActionFunction<AuthAction>;
 export type RedirectAC = ActionFunction<RedirectAction>;
-export type LoginUnmountAC = ActionFunction<LoginUnmountAction>;
+export type UnmountLoginAC = ActionFunction<UnmountLoginAction>;
 export type AuthErrorAC = PayloadActionFunction<ErrorAction, string | null>;
 
-export type Authorization = {
-  email: string;
-  password: string;
-};
-
-export type AuthorizationPost = (
-  values: Authorization
+export type AuthorizationThunkCreator = (
+  values: AuthorizationValues
 ) => (dispatch: Dispatch<AuthPostActions>) => void;
 
-export type AuthReducerAction = AuthPostActions | LoginUnmountAction;
+export type AuthReducerAction = AuthPostActions | UnmountLoginAction;

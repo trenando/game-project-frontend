@@ -2,7 +2,7 @@ import {
   AUTHORIZATION,
   AUTH_ERROR,
   REDIRECT,
-  LOGIN_UNMOUNT,
+  UNMOUNT_LOGIN,
 } from "../../actions/authActions/authActions";
 import { initialState } from "../../state/initialState";
 import { AuthReducer } from "./types/AuthReducerTypes";
@@ -26,7 +26,7 @@ export const authReducer: AuthReducer = (state = initialState, action) => {
         errorMessage: action.payload,
       };
     }
-    case LOGIN_UNMOUNT: {
+    case UNMOUNT_LOGIN: {
       return {
         ...state,
         errorMessage: null,

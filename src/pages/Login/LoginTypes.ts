@@ -1,11 +1,8 @@
 import { ThunkDispatch } from "redux-thunk";
 import React from "react";
-import {
-  AuthorizationPost,
-  Authorization,
-} from "../../redux/actions/authActions/types/AuthActionsTypes";
+import { AuthorizationThunkCreator } from "../../redux/actions/authActions/types/AuthActionsTypes";
 import { Action } from "redux";
-import { LoginUnmountAction } from "../../redux/actions/authActions/types/AuthActionsTypes";
+import { UnmountLoginAction } from "../../redux/actions/authActions/types/AuthActionsTypes";
 
 type LoginState = {
   auth: {
@@ -13,21 +10,30 @@ type LoginState = {
   };
 };
 
-export type LoginContainerType = ({ auth }: LoginState) => { errorMessage: string | null };
+export type AuthorizationValues = {
+  email: string;
+  password: string;
+};
+
+export type LoginStateToProps = ({ auth }: LoginState) => { errorMessage: string | null };
 
 export type LoginProps = {
-  authorization: (values: Authorization) => void;
-  loginUnmount: () => void;
+  authorization: (values: AuthorizationValues) => void;
+  unmountLogin: () => void;
   errorMessage: string | null;
 };
 
-export type OnSubmit = (values: Authorization) => void;
+export type OnSubmit = (values: AuthorizationValues) => void;
 
-export type LoginDispatchType = (
-  dispatch: ThunkDispatch<Authorization, void, Action<AuthorizationPost> | LoginUnmountAction>
+export type LoginDispatch = (
+  dispatch: ThunkDispatch<
+    AuthorizationValues,
+    void,
+    Action<AuthorizationThunkCreator> | UnmountLoginAction
+  >
 ) => {
-  authorization: (values: Authorization) => void;
-  loginUnmount: () => void;
+  authorization: (values: AuthorizationValues) => void;
+  unmountLogin: () => void;
 };
 
-export type LoginType = React.FC<LoginProps>;
+export type LoginFunction = React.FC<LoginProps>;

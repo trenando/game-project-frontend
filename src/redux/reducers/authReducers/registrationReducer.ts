@@ -2,12 +2,12 @@ import {
   ERROR_MESSAGE,
   REGISTRATION,
   SUCCESS_MESSAGE,
-  REGISTER_UNMOUNT
-} from "../../actions/authActions/registerActions";
+  UNMOUNT_REGISTRATION
+} from "../../actions/authActions/registrationActions";
 import { initialState } from "../../state/initialState";
-import { RegisterReducer } from "./types/RegisterReducerTypes";
+import { RegistrationReducer } from "./types/RegistrationReducerTypes";
 
-export const registerReducer: RegisterReducer = (state = initialState, action) => {
+export const registrationReducer: RegistrationReducer = (state = initialState, action) => {
   switch (action.type) {
     case REGISTRATION: {
       return {
@@ -26,7 +26,7 @@ export const registerReducer: RegisterReducer = (state = initialState, action) =
         successMessage: action.payload,
       };
     }
-    case REGISTER_UNMOUNT: {
+    case UNMOUNT_REGISTRATION: {
       return {
         ...state,
         errorMessage: null,

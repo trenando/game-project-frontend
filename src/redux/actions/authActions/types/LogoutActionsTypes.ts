@@ -7,8 +7,8 @@ type LogoutAction = {
   type: typeof LOGOUT;
 };
 
-export type LogoutDeleteAC = ActionFunction<LogoutReducerAction>;
+export type LogoutAC = ActionFunction<LogoutReducerAction>;
 
 export type LogoutReducerAction = LogoutAction | RedirectAction;
 
-export type LogoutDelete = () => (dispatch: Dispatch<LogoutReducerAction>) => void;
+export type LogoutThunkCreator = () => (dispatch: Dispatch<LogoutReducerAction>) => void;

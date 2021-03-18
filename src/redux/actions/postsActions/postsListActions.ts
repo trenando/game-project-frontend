@@ -1,5 +1,5 @@
 import { postsAPI } from "../../../api/postsApi";
-import { PageInfoAC, PostsListAC, PostsListGet } from "./types/PostsListTypes";
+import { PageInfoAC, PostsListAC, PostsListGet } from "./types/PostsListActionsTypes";
 
 export const POSTS_LIST = "POSTS_LIST";
 export const PAGE_INFO = "PAGE_INFO";

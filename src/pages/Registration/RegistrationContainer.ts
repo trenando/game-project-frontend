@@ -1,22 +1,25 @@
 import { connect } from "react-redux";
-import { register, registerUnmountAC } from "../../redux/actions/authActions/registerActions";
+import {
+  registrationThunkCreator,
+  unmountRegisterAC,
+} from "../../redux/actions/authActions/registrationActions";
 import { Registration } from "./Registration";
-import { RegistrationDispatchTypes, RegisterContainerType } from "./RegistrationTypes";
+import { RegistrationDispatch, RegistrationStateToProps } from "./RegistrationTypes";
 
-const mapStateToProps: RegisterContainerType = ({ register }) => {
+const mapStateToProps: RegistrationStateToProps = ({ registration }) => {
   return {
-    errorMessage: register.errorMessage,
-    successMessage: register.successMessage,
+    errorMessage: registration.errorMessage,
+    successMessage: registration.successMessage,
   };
 };
 
-const mapDispatchToProps: RegistrationDispatchTypes = (dispatch) => {
+const mapDispatchToProps: RegistrationDispatch = (dispatch) => {
   return {
     registration: (values) => {
-      dispatch(register(values));
+      dispatch(registrationThunkCreator(values));
     },
-    registerUnmount: () => {
-      dispatch(registerUnmountAC());
+    unmountRegistration: () => {
+      dispatch(unmountRegisterAC());
     },
   };
 };

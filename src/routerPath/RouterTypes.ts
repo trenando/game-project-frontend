@@ -4,6 +4,7 @@ import { ProfileProps } from "../pages/Profile/ProfileTypes";
 import { LoginProps } from "../pages/Login/LoginTypes";
 import { RegistrationProps } from "../pages/Registration/RegistrationTypes";
 import { CreatePostProps } from "../pages/CreatePost/CreatePostTypes";
+import { PostProps } from "../pages/Post/PostTypes";
 
 type ComponentType<T> = ConnectedComponent<React.FC<T>, T>;
 
@@ -25,7 +26,7 @@ type RouteElements = {
   login: RouteElement<LoginProps>;
   registration: RouteElement<RegistrationProps>;
   createPost: RouteElement<CreatePostProps>;
-  post: OtherRoutesElement<any>;
+  post: OtherRoutesElement<PostProps>;
 };
 
 export type RouteType = RouteElements;

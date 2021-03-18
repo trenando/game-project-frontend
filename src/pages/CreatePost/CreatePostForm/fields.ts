@@ -1,7 +1,8 @@
 import { Validate } from "../../../validate/validate";
+import { ValidateType } from "../../../validate/ValidateTypes";
 import { Fields } from "./CreatePostFormTypes";
 
-const validate = new Validate();
+const validate: ValidateType = new Validate();
 
 export const field: Fields = [
   {

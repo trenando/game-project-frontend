@@ -27,9 +27,9 @@ export type ProfileProps = {
     getMyProfile: () => void
 };
 
-export type ProfileContainerTypes = ({ profile, auth }: ProfileState) => ProfileFromState;
+export type ProfileStateToProps = ({ profile, auth }: ProfileState) => ProfileFromState;
 
-export type ProfileTypes = React.FC<ProfileProps>
+export type ProfileFunction = React.FC<ProfileProps>
 
 export type ProfileDispatch = (dispatch: ThunkDispatch<{}, void, Action<GetProfile>>) => {
     getMyProfile: () => void

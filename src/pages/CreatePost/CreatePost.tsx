@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./CreatePost.module.scss";
 import { CreatePostForm } from "./CreatePostForm/CreatePostForm";
-import { CreatePostType, OnSubmit } from "./CreatePostTypes";
+import { CreatePostFunction, OnSubmit } from "./CreatePostTypes";
 
-export const CreatePost: CreatePostType = ({
+export const CreatePost: CreatePostFunction = ({
   createPost,
   successMessage,
   errorMessage,

@@ -1,15 +1,15 @@
 import React from "react";
 import {
-  RegisterFormElement,
-  RegisterFormTypes,
-  ValuesForm,
-  RegisterFormAnotherElement,
+  RegistrationFormElement,
+  RegistrationFormFunction,
+  GenderValues,
+  RegistrationFormAnotherElement,
 } from "./RegistrationFormTypes";
 import style from "./RegistrationForm.module.scss";
 import { Formik, Form, Field } from "formik";
 import { otherFields, fields } from "./fields";
 
-export const RegistrationForm: RegisterFormTypes = ({ onSubmit, errorMessage, successMessage }) => {
+export const RegistrationForm: RegistrationFormFunction = ({ onSubmit, errorMessage, successMessage }) => {
   return (
     <Formik
       initialValues={{
@@ -26,7 +26,7 @@ export const RegistrationForm: RegisterFormTypes = ({ onSubmit, errorMessage, su
       {({ errors, touched, isSubmitting }: any) => (
         <Form className={style.form}>
           <h2 className={style.form__title}>Регистрация</h2>
-          {fields.map((el: RegisterFormElement, index: number) => {
+          {fields.map((el: RegistrationFormElement, index: number) => {
             return (
               <div key={index} className={style.form__block}>
                 <label htmlFor={el.name} className={style.form__label}>
@@ -53,11 +53,11 @@ export const RegistrationForm: RegisterFormTypes = ({ onSubmit, errorMessage, su
             );
           })}
           <div className={style.form__subblock}>
-            {otherFields.map((el: RegisterFormAnotherElement, index: number) => {
+            {otherFields.map((el: RegistrationFormAnotherElement, index: number) => {
               return (
                 <React.Fragment key={index}>
                   {el.values ? (
-                    el.values.map((element: ValuesForm, id: number) => {
+                    el.values.map((element: GenderValues, id: number) => {
                       return (
                         <label key={id} className={style.form__sublabel}>
                           <span>{element.radioName}</span>

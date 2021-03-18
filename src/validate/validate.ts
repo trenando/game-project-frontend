@@ -25,7 +25,7 @@ export class Validate {
   }
 
   public validate(value: string): string {
-    const errors = this.rules.reduce((result: any, rule: Rule) => {
+    const errors: string[] = this.rules.reduce((result: string[], rule: Rule) => {
       const error = rule.test(value);
       if (error) return [...result, error];
       return result;

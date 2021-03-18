@@ -5,9 +5,9 @@ import { PostId, PostIdResponse } from "../../api/types/PostsApiTypes";
 import {
   PostIdAction,
   UnmountPostAction,
-} from "../../redux/actions/postsActions/types/GetPostById";
+} from "../../redux/actions/postsActions/types/GetPostByIdActionsTypes";
 
-type PostProps = {
+export type PostProps = {
   postById: PostIdResponse;
   getPost: (postId: PostId) => void;
   unmountPost: () => void;
@@ -19,15 +19,15 @@ type PostByIdState = {
   };
 };
 
-export type PostContainerType = ({
+export type PostStateToProps = ({
   postById,
 }: PostByIdState) => {
   postById: PostIdResponse;
 };
 
-export type PostType = React.FC<PostProps>;
+export type PostFunction = React.FC<PostProps>;
 
-export type PostDispatchType = (
+export type PostDispatch = (
   dispatch: ThunkDispatch<PostId, void, Action<PostIdAction> | UnmountPostAction>
 ) => {
   getPost: (postId: PostId) => void;

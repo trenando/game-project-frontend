@@ -10,8 +10,16 @@ export const authAPI: AuthAPI = {
     localStorage.setItem("refreshToken", res.data.refreshToken);
     return res;
   },
-  async postRegister({ login, email, password, name }) {
-    const res = await instance.post("register", { login, email, password, name });
+  async postRegister({ login, email, password, name, surname, gender, age }) {
+    const res = await instance.post("register", {
+      login,
+      email,
+      password,
+      name,
+      surname,
+      gender,
+      age,
+    });
     return res;
   },
   async deleteLogin() {

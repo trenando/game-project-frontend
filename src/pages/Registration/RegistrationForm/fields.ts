@@ -1,9 +1,10 @@
 import { Validate } from "../../../validate/validate";
-import { RegisterFormElement, RegisterFormAnotherElement } from "./RegistrationFormTypes";
+import { ValidateType } from "../../../validate/ValidateTypes";
+import { RegistrationFormElement, RegistrationFormAnotherElement } from "./RegistrationFormTypes";
 
-const validate = new Validate();
+const validate: ValidateType = new Validate();
 
-export const fields: RegisterFormElement[] = [
+export const fields: RegistrationFormElement[] = [
   {
     title: "Логин",
     name: "login",
@@ -46,7 +47,7 @@ export const fields: RegisterFormElement[] = [
   },
 ];
 
-export const otherFields: RegisterFormAnotherElement[] = [
+export const otherFields: RegistrationFormAnotherElement[] = [
   {
     name: "gender",
     type: "radio",

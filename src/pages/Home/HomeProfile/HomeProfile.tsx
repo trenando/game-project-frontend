@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./HomeProfile.module.scss";
-import { HomeProfileTypes } from "./HomeProfileTypes";
+import { HomeProfileFunction } from "./HomeProfileTypes";
 
-export const HomeProfile: HomeProfileTypes = () => {
+export const HomeProfile: HomeProfileFunction = () => {
   return <div className={style.profile}>profile</div>;
 };

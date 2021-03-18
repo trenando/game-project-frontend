@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { PostId, PostIdResponse } from "../../../../api/types/PostsApiTypes";
 import { ActionFunction, PayloadActionFunction } from "../../../GlobalReduxTypes";
-import { POST_ID, UNMOUNT_POST } from "../getPostById";
+import { POST_ID, UNMOUNT_POST } from "../getPostByIdActions";
 
 export type PostIdAction = {
   type: typeof POST_ID;

@@ -1,16 +1,16 @@
 import { authAPI } from "../../../api/authApi";
 import {
   AuthorizationAC,
-  AuthorizationPost,
+  AuthorizationThunkCreator,
   AuthErrorAC,
   RedirectAC,
-  LoginUnmountAC,
+  UnmountLoginAC,
 } from "./types/AuthActionsTypes";
 
 export const AUTHORIZATION = "AUTHORIZATION";
 export const AUTH_ERROR = "AUTH_ERROR";
 export const REDIRECT = "REDIRECT";
-export const LOGIN_UNMOUNT = "LOGIN_UNMOUNT";
+export const UNMOUNT_LOGIN = "UNMOUNT_LOGIN";
 
 const authorizationAC: AuthorizationAC = () => ({ type: AUTHORIZATION });
 const authErrorAC: AuthErrorAC = (payload) => ({
@@ -18,9 +18,9 @@ const authErrorAC: AuthErrorAC = (payload) => ({
   payload,
 });
 export const redirectAC: RedirectAC = () => ({ type: REDIRECT });
-export const loginUnmountAC: LoginUnmountAC = () => ({ type: LOGIN_UNMOUNT });
+export const unmountLoginAC: UnmountLoginAC = () => ({ type: UNMOUNT_LOGIN });
 
-export const authorizationPost: AuthorizationPost = (values) => async (dispatch) => {
+export const authorizationThunkCreator: AuthorizationThunkCreator = (values) => async (dispatch) => {
   try {
     await authAPI.postLogin(values);
     dispatch(authorizationAC());

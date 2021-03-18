@@ -1,19 +1,19 @@
-import { Register } from "../../../redux/actions/authActions/types/RegisterActionsTypes";
+import { RegistrationValues } from "../RegistrationTypes";
 
-type RegisterFormProps = {
-  onSubmit: (values: Register) => void;
+type RegistrationFormProps = {
+  onSubmit: (values: RegistrationValues) => void;
   errorMessage: string | null;
   successMessage: string | null;
 };
 
-export type ValuesForm = {
+export type GenderValues = {
   radioName: string;
   value: "male" | "female";
 };
 
-export type RegisterFormTypes = (props: RegisterFormProps) => JSX.Element;
+export type RegistrationFormFunction = (props: RegistrationFormProps) => JSX.Element;
 
-export type RegisterFormElement = {
+export type RegistrationFormElement = {
   title: string;
   name: string;
   placeholder: string;
@@ -22,10 +22,10 @@ export type RegisterFormElement = {
   validate: (value: string) => string | undefined;
 };
 
-export type RegisterFormAnotherElement = {
+export type RegistrationFormAnotherElement = {
   type: string;
   name: string;
   title?: string;
   placeholder?: string;
-  values?: ValuesForm[];
+  values?: GenderValues[];
 };

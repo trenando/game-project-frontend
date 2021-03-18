@@ -1,9 +1,6 @@
 import { AxiosResponse } from "axios";
-
-type ItemData = {
-  postTitle: string;
-  postText: string;
-};
+import { CreatePostValues } from "../../pages/CreatePost/CreatePostTypes";
+import { QueryParams } from "../../pages/Home/HomePosts/HomePostsTypes";
 
 type PostItem = {
   postId: string;
@@ -28,13 +25,8 @@ export type ListResponse = {
   posts: PostItem[];
 };
 
-export type ListData = {
-  page: string | null;
-  limit: string | null;
-};
-
 export type PostsAPI = {
-  postItem({ postTitle, postText }: ItemData): Promise<AxiosResponse<string>>;
-  getList({ page, limit }: ListData): Promise<AxiosResponse<ListResponse>>;
+  postItem({ postTitle, postText }: CreatePostValues): Promise<AxiosResponse<string>>;
+  getList({ page, limit }: QueryParams): Promise<AxiosResponse<ListResponse>>;
   getPostById({ postId }: PostId): Promise<AxiosResponse<PostIdResponse>>;
 };

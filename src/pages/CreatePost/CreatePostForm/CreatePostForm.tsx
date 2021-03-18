@@ -1,10 +1,10 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
 import style from "./CreatePostForm.module.scss";
-import { CreatePostFormElement, CreatePostFormType } from "./CreatePostFormTypes";
+import { CreatePostFormElement, CreatePostFormFunction } from "./CreatePostFormTypes";
 import { field } from "./fields";
 
-export const CreatePostForm: CreatePostFormType = ({
+export const CreatePostForm: CreatePostFormFunction = ({
   onSubmit,
   successMessage,
   errorMessage,

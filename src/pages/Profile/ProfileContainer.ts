@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import { getProfile } from "../../redux/actions/profileActions/profileActions";
 import { Profile } from "./Profile";
-import { ProfileContainerTypes, ProfileDispatch } from "./ProfileTypes";
+import { ProfileStateToProps, ProfileDispatch } from "./ProfileTypes";
 
-const mapStateToProps: ProfileContainerTypes = ({ profile, auth }) => {
+const mapStateToProps: ProfileStateToProps = ({ profile, auth }) => {
     return {
         login: profile.login,
         name: profile.name,

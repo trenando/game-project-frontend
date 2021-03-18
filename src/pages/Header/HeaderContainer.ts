@@ -1,20 +1,20 @@
 import { connect } from "react-redux";
-import { logoutDelete } from "../../redux/actions/authActions/logoutActions";
+import { logoutThunkCreator } from "../../redux/actions/authActions/logoutActions";
 import { Header } from "./Header";
-import { HeaderContainerType, HeaderDispatchType } from "./HeaderTypes";
+import { HeaderStateToProps, HeaderDispatch } from "./HeaderTypes";
 
-const mapStateToProps: HeaderContainerType = ({ auth }) => {
-    return {
-        isAuth: auth.isAuth
-    };
+const mapStateToProps: HeaderStateToProps = ({ auth }) => {
+  return {
+    isAuth: auth.isAuth,
+  };
 };
 
-const mapDispatchToProps: HeaderDispatchType = (dispatch) => {
-    return {
-        logout: () => {
-            dispatch(logoutDelete());
-        }
-    };
+const mapDispatchToProps: HeaderDispatch = (dispatch) => {
+  return {
+    logout: () => {
+      dispatch(logoutThunkCreator());
+    },
+  };
 };
 
 export const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header);

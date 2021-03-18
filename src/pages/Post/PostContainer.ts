@@ -1,15 +1,15 @@
 import { connect } from "react-redux";
-import { getPostById, unmountPostAC } from "../../redux/actions/postsActions/getPostById";
+import { getPostById, unmountPostAC } from "../../redux/actions/postsActions/getPostByIdActions";
 import { Post } from "./Post";
-import { PostContainerType, PostDispatchType } from "./PostTypes";
+import { PostStateToProps, PostDispatch } from "./PostTypes";
 
-const mapStateToProps: PostContainerType = ({ postById }) => {
+const mapStateToProps: PostStateToProps = ({ postById }) => {
   return {
     postById: postById.postId,
   };
 };
 
-const mapDispatchToProps: PostDispatchType = (dispatch) => {
+const mapDispatchToProps: PostDispatch = (dispatch) => {
   return {
     getPost: (postId) => {
       dispatch(getPostById(postId));

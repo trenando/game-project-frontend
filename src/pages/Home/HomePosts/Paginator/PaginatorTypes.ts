@@ -25,4 +25,4 @@ export type SortLinksArray = (
   rangeButtons: number
 ) => Array<string | number>;
 
-export type PaginatorType = React.FC<PaginatorProps>;
+export type PaginatorFunction = React.FC<PaginatorProps>;

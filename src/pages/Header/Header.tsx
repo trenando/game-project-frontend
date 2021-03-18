@@ -2,9 +2,9 @@ import React from "react";
 import style from "./Header.module.scss";
 import { route } from "../../routerPath/routerPath";
 import { Link } from "react-router-dom";
-import { HeaderType, OnClick } from "./HeaderTypes";
+import { HeaderFunction, OnClick } from "./HeaderTypes";
 
-export const Header: HeaderType = ({ isAuth, logout }) => {
+export const Header: HeaderFunction = ({ isAuth, logout }) => {
   const onClick: OnClick = () => {
     logout();
   };

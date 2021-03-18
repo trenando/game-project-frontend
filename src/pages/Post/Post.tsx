@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { PostId } from "../../api/types/PostsApiTypes";
 import style from "./Post.module.scss";
-import { PostType } from "./PostTypes";
+import { PostFunction } from "./PostTypes";
 
-export const Post: PostType = ({ postById, getPost, unmountPost }) => {
+export const Post: PostFunction = ({ postById, getPost, unmountPost }) => {
   const postId: PostId = useParams();
 
   useEffect(() => {

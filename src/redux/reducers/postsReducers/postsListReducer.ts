@@ -1,4 +1,4 @@
-import { PAGE_INFO, POSTS_LIST } from "../../actions/postsActions/postsList";
+import { PAGE_INFO, POSTS_LIST } from "../../actions/postsActions/postsListActions";
 import { initialState } from "../../state/initialState";
 import { PostsListReducer } from "./types/PostsListReducerTypes";
 

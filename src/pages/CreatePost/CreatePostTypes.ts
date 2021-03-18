@@ -3,7 +3,7 @@ import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 
 export type CreatePostProps = {
-  createPost: (values: ValuesPayload) => void;
+  createPost: (values: CreatePostValues) => void;
   postTitle: string;
   postText: string;
   successMessage: string | null;
@@ -17,24 +17,24 @@ type CreatePostState = {
   };
 };
 
-export type ValuesPayload = {
+export type CreatePostValues = {
   postTitle: string;
   postText: string;
 };
 
-export type CreatePostContainerType = ({
+export type CreatePostStateToProps = ({
   createPost,
 }: CreatePostState) => {
   successMessage: string | null;
   errorMessage: string | null;
 };
 
-export type OnSubmit = (values: ValuesPayload) => void;
+export type OnSubmit = (values: CreatePostValues) => void;
 
 export type CreatePostDispatch = (
   dispatch: ThunkDispatch<{}, void, Action<any>>
 ) => {
-  createPost: (values: ValuesPayload) => void;
+  createPost: (values: CreatePostValues) => void;
 };
 
-export type CreatePostType = React.FC<CreatePostProps>;
+export type CreatePostFunction = React.FC<CreatePostProps>;

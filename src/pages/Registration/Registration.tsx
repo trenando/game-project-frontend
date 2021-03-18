@@ -1,28 +1,28 @@
 import React, { useEffect } from "react";
 import style from "./Registration.module.scss";
 import { RegistrationForm } from "./RegistrationForm/RegistrationForm";
-import { RegistrationType, OnRegisterSubmit } from "./RegistrationTypes";
+import { RegistrationFunction, OnSubmit } from "./RegistrationTypes";
 
-export const Registration: RegistrationType = ({
+export const Registration: RegistrationFunction = ({
   registration,
-  registerUnmount,
+  unmountRegistration,
   errorMessage,
   successMessage,
 }) => {
-  const onRegisterSubmit: OnRegisterSubmit = (values) => {
+  const onSubmit: OnSubmit = (values) => {
     registration(values);
   };
 
   useEffect(() => {
     return () => {
-      registerUnmount();
+      unmountRegistration();
     };
-  }, [registerUnmount]);
+  }, [unmountRegistration]);
 
   return (
     <section className={style.section}>
       <RegistrationForm
-        onSubmit={onRegisterSubmit}
+        onSubmit={onSubmit}
         errorMessage={errorMessage}
         successMessage={successMessage}
       />

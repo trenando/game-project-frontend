@@ -1,3 +1,3 @@
 import React from "react";
 
-export type FooterType = React.FC<{}>;
+export type FooterFunction = React.FC<{}>;

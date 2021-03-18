@@ -3,10 +3,10 @@ import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import style from "./HomePosts.module.scss";
 import { PostsForm } from "./HomePostsForm/HomePostsForm";
-import { ChangeUrl, HomePostsElement, HomePostsType, QueryParams } from "./HomePostsTypes";
+import { ChangeUrl, HomePostsElement, HomePostsFunction, QueryParams } from "./HomePostsTypes";
 import { Paginator } from "./Paginator/Paginator";
 
-export const HomePosts: HomePostsType = ({
+export const HomePosts: HomePostsFunction = ({
   posts,
   postsList,
   allPostsCount,

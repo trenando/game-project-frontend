@@ -1,8 +1,8 @@
 import React from "react";
-import { ProfileTypes } from "./ProfileTypes";
+import { ProfileFunction } from "./ProfileTypes";
 import style from "./Profile.module.scss";
 
-export const Profile: ProfileTypes = ({ login, name, postCount, subCount, isAuth, getMyProfile }) => {
+export const Profile: ProfileFunction = ({ login, name, postCount, subCount, isAuth, getMyProfile }) => {
   if (isAuth) {
     getMyProfile();
   };

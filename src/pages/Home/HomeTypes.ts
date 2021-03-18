@@ -1,3 +1,3 @@
 import React from "react";
 
-export type HomeType = React.FC<any>;
+export type HomeFunction = React.FC<{}>;

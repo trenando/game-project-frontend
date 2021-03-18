@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { postsListGet } from "../../../redux/actions/postsActions/postsList";
+import { postsListGet } from "../../../redux/actions/postsActions/postsListActions";
 import { HomePosts } from "./HomePosts";
-import { HomePostsContainerProps, HomePostsDispatchType } from "./HomePostsTypes";
+import { HomePostsStateToProps, HomePostsDispatch } from "./HomePostsTypes";
 
-const mapStateToProps: HomePostsContainerProps = ({ postsList }) => {
+const mapStateToProps: HomePostsStateToProps = ({ postsList }) => {
   return {
     posts: postsList.posts,
     allPostsCount: postsList.allPostsCount,
@@ -12,7 +12,7 @@ const mapStateToProps: HomePostsContainerProps = ({ postsList }) => {
   };
 };
 
-const mapDispatchToProps: HomePostsDispatchType = (dispatch) => {
+const mapDispatchToProps: HomePostsDispatch = (dispatch) => {
   return {
     postsList: (query) => {
       dispatch(postsListGet(query));

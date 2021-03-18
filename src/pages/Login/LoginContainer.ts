@@ -1,21 +1,21 @@
 import { connect } from "react-redux";
-import { authorizationPost, loginUnmountAC } from "../../redux/actions/authActions/authActions";
+import { authorizationThunkCreator, unmountLoginAC } from "../../redux/actions/authActions/authActions";
 import { Login } from "./Login";
-import { LoginContainerType, LoginDispatchType } from "./LoginTypes";
+import { LoginStateToProps, LoginDispatch } from "./LoginTypes";
 
-const mapStateToProps: LoginContainerType = ({ auth }) => {
+const mapStateToProps: LoginStateToProps = ({ auth }) => {
   return {
     errorMessage: auth.errorMessage,
   };
 };
 
-const mapDispatchToProps: LoginDispatchType = (dispatch) => {
+const mapDispatchToProps: LoginDispatch = (dispatch) => {
   return {
     authorization: (values) => {
-      dispatch(authorizationPost(values));
+      dispatch(authorizationThunkCreator(values));
     },
-    loginUnmount: () => {
-      dispatch(loginUnmountAC());
+    unmountLogin: () => {
+      dispatch(unmountLoginAC());
     },
   };
 };

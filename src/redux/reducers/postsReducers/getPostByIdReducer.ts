@@ -1,4 +1,4 @@
-import { POST_ID, UNMOUNT_POST } from "../../actions/postsActions/getPostById";
+import { POST_ID, UNMOUNT_POST } from "../../actions/postsActions/getPostByIdActions";
 import { initialState } from "../../state/initialState";
 import { GetPostByIdReducer } from "./types/GetPostByIdReducerTypes";
 

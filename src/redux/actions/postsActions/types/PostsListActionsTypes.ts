@@ -2,7 +2,7 @@ import { Dispatch } from "redux";
 import { ListResponse } from "../../../../api/types/PostsApiTypes";
 import { QueryParams } from "../../../../pages/Home/HomePosts/HomePostsTypes";
 import { PayloadActionFunction } from "../../../GlobalReduxTypes";
-import { PAGE_INFO, POSTS_LIST } from "../postsList";
+import { PAGE_INFO, POSTS_LIST } from "../postsListActions";
 
 export type PostsListAction = {
   type: typeof POSTS_LIST;

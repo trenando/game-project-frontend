@@ -1,5 +1,5 @@
 import { postsAPI } from "../../../api/postsApi";
-import { CreatedPostAC, CreatePost, ErrorPostAC } from "./types/CreatePostTypes";
+import { CreatedPostAC, CreatePostThunkCreator, ErrorPostAC } from "./types/CreatePostActionsTypes";
 
 export const CREATED_POST = "CREATED_POST";
 export const ERROR_POST = "ERROR_POST";
@@ -14,7 +14,7 @@ const errorPostAC:ErrorPostAC = (payload) => ({
   payload,
 });
 
-export const createPost: CreatePost = (values) => async (dispatch) => {
+export const createPostThunkCreator: CreatePostThunkCreator = (values) => async (dispatch) => {
   try {
     const res = await postsAPI.postItem(values);
     dispatch(createdPostAC(res.data));

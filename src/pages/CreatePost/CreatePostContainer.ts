@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { createPost } from "../../redux/actions/postsActions/createPost";
+import { createPostThunkCreator } from "../../redux/actions/postsActions/createPostActions";
 import { CreatePost } from "./CreatePost";
-import { CreatePostDispatch, CreatePostContainerType } from "./CreatePostTypes";
+import { CreatePostDispatch, CreatePostStateToProps } from "./CreatePostTypes";
 
-const mapStateToProps: CreatePostContainerType = ({ createPost }) => {
+const mapStateToProps: CreatePostStateToProps = ({ createPost }) => {
   return {
     successMessage: createPost.successMessage,
     errorMessage: createPost.errorMessage,
@@ -13,7 +13,7 @@ const mapStateToProps: CreatePostContainerType = ({ createPost }) => {
 const mapDispatchToProps: CreatePostDispatch = (dispatch) => {
   return {
     createPost: (values) => {
-      dispatch(createPost(values));
+      dispatch(createPostThunkCreator(values));
     },
   };
 };

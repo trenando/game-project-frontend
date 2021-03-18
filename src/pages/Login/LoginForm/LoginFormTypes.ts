@@ -1,7 +1,7 @@
-import { Authorization } from "../../../redux/actions/authActions/types/AuthActionsTypes";
+import { AuthorizationValues } from "../LoginTypes";
 
 type LoginFormProps = {
-  onSubmit: (values: Authorization) => void;
+  onSubmit: (values: AuthorizationValues) => void;
   errorMessage: string | null;
 };
 
@@ -13,9 +13,4 @@ export type LoginFormElement = {
   validate: (value: string) => string | undefined;
 };
 
-export type ValidateLogin = (
-  maxLength: number,
-  minLength?: number
-) => (value: string) => string | undefined;
-
-export type LoginFormTypes = (props: LoginFormProps) => JSX.Element;
+export type LoginFormFunction = (props: LoginFormProps) => JSX.Element;

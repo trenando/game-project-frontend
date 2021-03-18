@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./LoginForm.module.scss";
-import { LoginFormElement, LoginFormTypes } from "./LoginFormTypes";
+import { LoginFormElement, LoginFormFunction } from "./LoginFormTypes";
 import { Formik, Form, Field } from "formik";
 import { fields } from "./fields";
 
-export const LoginForm: LoginFormTypes = ({ onSubmit, errorMessage }) => {
+export const LoginForm: LoginFormFunction = ({ onSubmit, errorMessage }) => {
   return (
     <Formik
       initialValues={{

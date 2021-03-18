@@ -1,5 +1,5 @@
 import { postsAPI } from "../../../api/postsApi";
-import { GetPostById, PostIdAC, UnmountPostAC } from "./types/GetPostById";
+import { GetPostById, PostIdAC, UnmountPostAC } from "./types/GetPostByIdActionsTypes";
 
 export const POST_ID = "POST_ID";
 export const UNMOUNT_POST = "UNMOUNT_POST";

@@ -1,4 +1,4 @@
-import { CREATED_POST, ERROR_POST } from "../../actions/postsActions/createPost";
+import { CREATED_POST, ERROR_POST } from "../../actions/postsActions/createPostActions";
 import { initialState } from "../../state/initialState";
 import { CreatePostsReducer } from "./types/CreatePostReducerTypes";
 
