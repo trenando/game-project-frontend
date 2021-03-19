@@ -7,7 +7,7 @@ This is the frontend part of the project, for better experience please use it wi
 To install the project please download it or clone, and then use 
 
 ```sh
-yarn add
+yarn
 ```
 
 ## Technologies
