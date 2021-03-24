@@ -1,6 +1,6 @@
 import React from "react";
+import { Pagination } from "./Pagination";
 import style from "./Paginator.module.scss";
-import { paginatorLinks } from "./paginatorLinks";
 import { OnClick, PaginatorFunction } from "./PaginatorTypes";
 
 export const Paginator: PaginatorFunction = ({
@@ -9,25 +9,19 @@ export const Paginator: PaginatorFunction = ({
   postsPerPage,
   changeUrl,
 }) => {
-  // * Нужен для указания количества кнопок слева и справа
-  const pageRange = 1;
-  // * Количество кнопок в начале и конце когда пользователь находится в середине
-  const rangeButtons = 1;
-  const buttons: (number | (string | number))[] = paginatorLinks(
-    allPostsCount,
-    currentPage,
-    postsPerPage,
-    pageRange,
-    rangeButtons
-  );
+  const pagination = new Pagination();
+  const buttons: (number | string)[] = pagination
+    .countPages(allPostsCount, postsPerPage)
+    .paginate(currentPage);
 
   const onClick: OnClick = (e) => {
     changeUrl(e.currentTarget.value);
+    e.stopPropagation();
   };
 
   return (
     <div className={style.paginator}>
-      {buttons.map((el: number | (number | string), index: number) => {
+      {buttons.map((el: number | string, index: number) => {
         return el === "..." ? (
           <span key={index} className={style.paginator__dots}>
             {el}

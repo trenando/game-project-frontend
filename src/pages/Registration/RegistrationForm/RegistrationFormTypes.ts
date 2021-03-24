@@ -1,3 +1,4 @@
+import { FormikErrors, FormikTouched } from "formik";
 import { RegistrationValues } from "../RegistrationTypes";
 
 type RegistrationFormProps = {
@@ -20,6 +21,16 @@ export type RegistrationFormElement = {
   type: string;
   required: boolean;
   validate: (value: string) => string | undefined;
+};
+
+export type RegistrationFormik = {
+  errors: FormikErrors<{
+    [key: string]: string | number | undefined;
+  }>;
+  touched: FormikTouched<{
+    [key: string]: string | number | undefined;
+  }>;
+  isSubmitting: boolean;
 };
 
 export type RegistrationFormAnotherElement = {

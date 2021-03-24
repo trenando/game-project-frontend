@@ -4,8 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Router } from "./Router";
 import "./App.scss";
-import { HeaderContainer } from "./pages/Header/HeaderContainer";
-import { Footer } from "./pages/Footer/Footer";
+import { HeaderContainer } from "./components/Header/HeaderContainer";
+import { Footer } from "./components/Footer/Footer";
 
 export const App: React.FC<{}> = () => {
   return (

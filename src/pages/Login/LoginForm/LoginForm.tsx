@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./LoginForm.module.scss";
-import { LoginFormElement, LoginFormFunction } from "./LoginFormTypes";
+import { LoginFormElement, LoginFormFunction, LoginFormik } from "./LoginFormTypes";
 import { Formik, Form, Field } from "formik";
 import { fields } from "./fields";
 
@@ -13,7 +13,7 @@ export const LoginForm: LoginFormFunction = ({ onSubmit, errorMessage }) => {
       }}
       onSubmit={onSubmit}
     >
-      {({ errors, touched, isSubmitting }: any) => (
+      {({ errors, touched, isSubmitting }: LoginFormik) => (
         <Form className={style.form}>
           <h2 className={style.form__title}>Авторизация</h2>
           {fields.map((el: LoginFormElement, index: number) => {

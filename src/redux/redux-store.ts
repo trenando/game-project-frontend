@@ -7,6 +7,7 @@ import { logoutReducer } from "./reducers/authReducers/logoutReducer";
 import { postsListReducer } from "./reducers/postsReducers/postsListReducer";
 import { createPostsReducer } from "./reducers/postsReducers/createPostReducer";
 import { getPostByIdReducer } from "./reducers/postsReducers/getPostByIdReducer";
+import { preloaderReducer } from "./reducers/globalReducers/preloaderReducer";
 
 const reducers = combineReducers({
   profile: profileReducer,
@@ -16,6 +17,7 @@ const reducers = combineReducers({
   postsList: postsListReducer,
   createPost: createPostsReducer,
   postById: getPostByIdReducer,
+  preloader: preloaderReducer,
 });
 
 export const store = createStore(reducers, applyMiddleware(thunkMiddleware));

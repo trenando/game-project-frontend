@@ -1,11 +1,11 @@
 import React, { MouseEvent } from "react";
-import { ChangeUrl } from "../HomePostsTypes";
+import { NewUrl } from "../HomePostsTypes";
 
 type PaginatorProps = {
   allPostsCount: number;
   currentPage: number;
   postsPerPage: number;
-  changeUrl: ChangeUrl;
+  changeUrl: NewUrl;
 };
 
 export type OnClick = (e: MouseEvent<HTMLButtonElement>) => void;

@@ -1,5 +1,5 @@
 import { postsAPI } from "../../../api/postsApi";
-import { GetPostById, PostIdAC, UnmountPostAC } from "./types/GetPostByIdActionsTypes";
+import { GetPostByIdThunkCreator, PostIdAC, UnmountPostAC } from "./types/GetPostByIdActionsTypes";
 
 export const POST_ID = "POST_ID";
 export const UNMOUNT_POST = "UNMOUNT_POST";
@@ -13,7 +13,7 @@ const postIdAC: PostIdAC = (payload) => ({
   payload,
 });
 
-export const getPostById: GetPostById = (postId) => async (dispatch) => {
+export const getPostByIdThunkCreator: GetPostByIdThunkCreator = (postId) => async (dispatch) => {
   try {
     const res = await postsAPI.getPostById(postId);
     dispatch(postIdAC(res.data));

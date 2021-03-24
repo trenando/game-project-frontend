@@ -17,4 +17,4 @@ export type PostIdReucerActions = PostIdAction | UnmountPostAction;
 export type PostIdAC = PayloadActionFunction<PostIdAction, PostIdResponse>;
 export type UnmountPostAC = ActionFunction<UnmountPostAction>;
 
-export type GetPostById = (postId: PostId) => (dispatch: Dispatch<PostIdAction>) => void;
+export type GetPostByIdThunkCreator = (postId: PostId) => (dispatch: Dispatch<PostIdAction>) => void;

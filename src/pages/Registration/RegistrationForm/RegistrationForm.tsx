@@ -4,6 +4,7 @@ import {
   RegistrationFormFunction,
   GenderValues,
   RegistrationFormAnotherElement,
+  RegistrationFormik,
 } from "./RegistrationFormTypes";
 import style from "./RegistrationForm.module.scss";
 import { Formik, Form, Field } from "formik";
@@ -23,7 +24,7 @@ export const RegistrationForm: RegistrationFormFunction = ({ onSubmit, errorMess
       }}
       onSubmit={onSubmit}
     >
-      {({ errors, touched, isSubmitting }: any) => (
+      {({ errors, touched, isSubmitting }: RegistrationFormik) => (
         <Form className={style.form}>
           <h2 className={style.form__title}>Регистрация</h2>
           {fields.map((el: RegistrationFormElement, index: number) => {

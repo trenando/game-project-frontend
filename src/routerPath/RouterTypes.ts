@@ -5,6 +5,7 @@ import { LoginProps } from "../pages/Login/LoginTypes";
 import { RegistrationProps } from "../pages/Registration/RegistrationTypes";
 import { CreatePostProps } from "../pages/CreatePost/CreatePostTypes";
 import { PostProps } from "../pages/Post/PostTypes";
+import { HomeProps } from "../pages/Home/HomeTypes";
 
 type ComponentType<T> = ConnectedComponent<React.FC<T>, T>;
 
@@ -21,18 +22,25 @@ type OtherRoutesElement<T> = {
 };
 
 type RouteElements = {
-  home: RouteElement<{}>;
+  home: RouteElement<HomeProps>;
   profile: RouteElement<ProfileProps>;
   login: RouteElement<LoginProps>;
   registration: RouteElement<RegistrationProps>;
   createPost: RouteElement<CreatePostProps>;
   post: OtherRoutesElement<PostProps>;
+  pageNotFound: OtherRoutesElement<{}>;
 };
 
 export type RouteType = RouteElements;
 
 export type StateRouter = {
   auth: {
-    isAuth: Boolean;
+    isAuth: boolean;
   };
 };
+
+type CustomRouteProps = {
+  component: any;
+};
+
+export type CustomRouteFunction = React.FC<CustomRouteProps>;

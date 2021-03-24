@@ -1,5 +1,6 @@
 import { postsAPI } from "../../../api/postsApi";
-import { PageInfoAC, PostsListAC, PostsListGet } from "./types/PostsListActionsTypes";
+import { preloaderAC } from "../globalActions/preloaderAction";
+import { PageInfoAC, PostsListAC, PostsListThunkCreator } from "./types/PostsListActionsTypes";
 
 export const POSTS_LIST = "POSTS_LIST";
 export const PAGE_INFO = "PAGE_INFO";
@@ -14,11 +15,13 @@ const pageInfoAC:PageInfoAC = (payload) => ({
   payload,
 })
 
-export const postsListGet: PostsListGet = (query) => async (dispatch) => {
+export const postsListThunkCreator: PostsListThunkCreator = (query) => async (dispatch) => {
   try {
+    dispatch(preloaderAC(true));
     const res = await postsAPI.getList(query);
     dispatch(pageInfoAC(query));
     dispatch(postsListAC(res.data));
+    dispatch(preloaderAC(false));
   } catch (err) {
     console.log("произошла ошибка", err);
   }

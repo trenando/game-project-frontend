@@ -12,6 +12,7 @@ export interface UserState {
 
 export interface StateType extends UserState {
   isAuth: boolean;
+  isLoading: boolean;
   errorMessage: string | null;
   successMessage: string | null;
   allPostsCount: number;
@@ -21,9 +22,9 @@ export interface StateType extends UserState {
   currentPage: number;
   postsPerPage: number;
   postId: {
-    postTitle: string,
-    postText: string,
-    login: string | null,
-    date: string | null,
+    postTitle: string;
+    postText: string;
+    login: string | null;
+    date: string | null;
   };
 }

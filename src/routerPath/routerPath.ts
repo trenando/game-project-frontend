@@ -2,16 +2,17 @@ import { RegistrationContainer } from "../pages/Registration/RegistrationContain
 import { LoginContainer } from "../pages/Login/LoginContainer";
 import { ProfileContainer } from "../pages/Profile/ProfileContainer";
 import { RouteType } from "./RouterTypes";
-import { Home } from "../pages/Home/Home";
 import { CreatePostContainer } from "../pages/CreatePost/CreatePostContainer";
 import { PostContainer } from "../pages/Post/PostContainer";
+import { PageNotFound } from "../pages/PageNotFound/PageNotFound";
+import { HomeContainer } from "../pages/Home/HomeContainer";
 
 export const route: RouteType = {
   home: {
     path: "/",
     link: "/?page=1&limit=10",
     name: "Главная",
-    component: Home,
+    component: HomeContainer,
   },
   profile: {
     path: "/profile",
@@ -40,5 +41,9 @@ export const route: RouteType = {
   post: {
     path: "/posts/:postId",
     component: PostContainer,
+  },
+  pageNotFound: {
+    path: "*",
+    component: PageNotFound,
   },
 };

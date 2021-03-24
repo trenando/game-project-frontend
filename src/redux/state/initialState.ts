@@ -4,6 +4,7 @@ import { userState } from "./userState";
 export const initialState: StateType = {
   ...userState,
   isAuth: !!localStorage.getItem("token"),
+  isLoading: false,
   errorMessage: null,
   successMessage: null,
   allPostsCount: 0,

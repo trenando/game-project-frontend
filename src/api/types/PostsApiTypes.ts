@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { CreatePostValues } from "../../pages/CreatePost/CreatePostTypes";
-import { QueryParams } from "../../pages/Home/HomePosts/HomePostsTypes";
+import { QueryParams } from "../../pages/Home/HomeTypes";
 
 type PostItem = {
   postId: string;

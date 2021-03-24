@@ -1,7 +1,8 @@
 import { Dispatch } from "redux";
 import { ListResponse } from "../../../../api/types/PostsApiTypes";
-import { QueryParams } from "../../../../pages/Home/HomePosts/HomePostsTypes";
+import { QueryParams } from "../../../../pages/Home/HomeTypes";
 import { PayloadActionFunction } from "../../../GlobalReduxTypes";
+import { PreloaderAction } from "../../globalActions/GlobalActionsTypes";
 import { PAGE_INFO, POSTS_LIST } from "../postsListActions";
 
 export type PostsListAction = {
@@ -14,11 +15,11 @@ export type PageInfoAction = {
   payload: QueryParams;
 };
 
-export type Actions = PostsListAction | PageInfoAction;
+export type Actions = PostsListAction | PageInfoAction | PreloaderAction;
 
 export type PostsListAC = PayloadActionFunction<PostsListAction, ListResponse>;
 export type PageInfoAC = PayloadActionFunction<PageInfoAction, QueryParams>;
 
-export type PostsListGet = (query: QueryParams) => (dispatch: Dispatch<Actions>) => void;
+export type PostsListThunkCreator = (query: QueryParams) => (dispatch: Dispatch<Actions>) => void;
 
 export type PostsListReducerAction = Actions;
