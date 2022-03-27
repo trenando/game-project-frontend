@@ -1,16 +1,12 @@
-import { Action } from "redux";
-import React from "react";
-import { ThunkDispatch } from "redux-thunk";
-import {
-  RegistrationThunkCreator,
-  UnmountRegistrationAction,
-} from "../../redux/actions/authActions/types/RegistrationActionsTypes";
+import { FC } from "react";
 
-type RegistrationState = {
-  registration: {
-    errorMessage: string | null;
-    successMessage: string | null;
-  };
+export type RegistrationSelector = {
+  errorMessage: string | null;
+  successMessage: string | null
+}
+
+export type RegistrationState = {
+  registration: RegistrationSelector
 };
 
 export type RegistrationValues = {
@@ -20,7 +16,7 @@ export type RegistrationValues = {
   name: string;
   surname?: string;
   gender?: string;
-  age?: number;
+  age?: string;
 };
 
 export type RegistrationProps = {
@@ -32,22 +28,7 @@ export type RegistrationProps = {
 
 export type OnSubmit = (values: RegistrationValues) => void;
 
-export type RegistrationFunction = React.FC<RegistrationProps>;
+export type RegistrationFunction = FC<RegistrationProps>;
 
-export type RegistrationStateToProps = ({
-  registration,
-}: RegistrationState) => {
-  errorMessage: string | null;
-  successMessage: string | null;
-};
-
-export type RegistrationDispatch = (
-  dispatch: ThunkDispatch<
-    RegistrationValues,
-    void,
-    Action<RegistrationThunkCreator> | UnmountRegistrationAction
-  >
-) => {
-  registration: (values: RegistrationValues) => void;
-  unmountRegistration: () => void;
-};
+export type RegistrationDispatch = (values: RegistrationValues) => void;
+export type UnmountRegistrationDispatch = () => void;

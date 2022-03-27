@@ -37,6 +37,6 @@ export type RegistrationFormAnotherElement = {
   type: string;
   name: string;
   title?: string;
-  placeholder?: string;
   values?: GenderValues[];
+  value?: string;
 };

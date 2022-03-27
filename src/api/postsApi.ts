@@ -15,6 +15,7 @@ export const postsAPI: PostsAPI = {
         limit,
       },
     });
+    console.log("ищем ошибку", res);
     return res;
   },
   async getPostById({ postId }) {

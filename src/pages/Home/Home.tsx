@@ -5,7 +5,7 @@ import { HomeFunction, QueryParams, ChangeUrl } from "./HomeTypes";
 import { useHistory, useLocation } from "react-router";
 import { HomePosts } from "./HomePosts/HomePosts";
 
-export const Home: HomeFunction = ({ isLoading, homePostsProps, isAuth, postList }) => {
+export const Home: HomeFunction = ({ isLoading, postsList, isAuth, postList }) => {
   const location = useLocation();
   const history = useHistory();
 
@@ -16,16 +16,16 @@ export const Home: HomeFunction = ({ isLoading, homePostsProps, isAuth, postList
       limit: query.get("limit"),
     };
     postList(queryParams);
-  }, [location, postList]);
+  }, [location]);
 
   const changeUrl: ChangeUrl = (page) => {
-    history.push(`/?page=${page}&limit=${homePostsProps.postsPerPage}`);
+    history.push(`/?page=${page}&limit=${postsList.postsPerPage}`);
   };
 
   return (
     <section className={style.content}>
       {isAuth ? <HomeProfile /> : null}
-      <HomePosts homeState={homePostsProps} changeUrl={changeUrl} isLoading={isLoading} />
+      <HomePosts postsList={postsList} changeUrl={changeUrl} isLoading={isLoading} />
     </section>
   );
 };

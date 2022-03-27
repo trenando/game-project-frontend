@@ -10,7 +10,7 @@ const postsListAC: PostsListAC = (payload) => ({
   payload,
 });
 
-const pageInfoAC:PageInfoAC = (payload) => ({
+const pageInfoAC: PageInfoAC = (payload) => ({
   type: PAGE_INFO,
   payload,
 })
@@ -22,7 +22,7 @@ export const postsListThunkCreator: PostsListThunkCreator = (query) => async (di
     dispatch(pageInfoAC(query));
     dispatch(postsListAC(res.data));
     dispatch(preloaderAC(false));
-  } catch (err) {
+  } catch (err: any) {
     console.log("произошла ошибка", err);
   }
 };

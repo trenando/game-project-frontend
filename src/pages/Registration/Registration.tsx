@@ -3,7 +3,7 @@ import style from "./Registration.module.scss";
 import { RegistrationForm } from "./RegistrationForm/RegistrationForm";
 import { RegistrationFunction, OnSubmit } from "./RegistrationTypes";
 
-export const Registration: RegistrationFunction = ({
+export const Registration:RegistrationFunction = ({
   registration,
   unmountRegistration,
   errorMessage,

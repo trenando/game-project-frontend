@@ -1,9 +1,6 @@
-import { Action } from "redux";
-import React from "react";
-import { ThunkDispatch } from "redux-thunk";
-import { GetProfile } from "../../redux/actions/profileActions/types/ProfileActionsTypes";
+import { FC } from "react";
 
-type ProfileFromState = {
+export type ProfileSelector = {
   login: string | null;
   name: string | null;
   surname: string | null;
@@ -14,12 +11,19 @@ type ProfileFromState = {
   isAuth: Boolean;
 };
 
-type ProfileState = {
-  profile: ProfileFromState;
-  auth: {
-    isAuth: Boolean;
-  };
+export type AuthSelector = {
+  isAuth: Boolean;
 };
+
+export type ProfileState = {
+  profile: ProfileSelector
+};
+
+export type AuthState = {
+  auth: AuthSelector
+};
+
+export type GetMyProfileDispatch = () => void;
 
 export type ProfileProps = {
   login: string | null;
@@ -33,12 +37,4 @@ export type ProfileProps = {
   getMyProfile: () => void;
 };
 
-export type ProfileStateToProps = ({ profile, auth }: ProfileState) => ProfileFromState;
-
-export type ProfileFunction = React.FC<ProfileProps>;
-
-export type ProfileDispatch = (
-  dispatch: ThunkDispatch<{}, void, Action<GetProfile>>
-) => {
-  getMyProfile: () => void;
-};
+export type ProfileFunction = FC<ProfileProps>;

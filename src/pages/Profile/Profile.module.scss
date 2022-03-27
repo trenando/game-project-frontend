@@ -7,20 +7,32 @@
 .profile {
   @include section-block(15px);
   box-sizing: border-box;
-  height: 600px;
-  max-width: 600px;
+  height: 420px;
+  max-width: 530px;
   width: 100%;
   padding: 15px;
-  a {
-    color: black;
-  }
   &__block {
     display: flex;
     width: 100%;
-    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed var(--main-border-color);
   }
   &__img {
+    position: relative;
     width: 50%;
+    &_changer {
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      height: 200px;
+      top: 0;
+      width: 200px;
+      button{
+        box-sizing: border-box;
+        width: 200px;
+        height: 25px;
+      }
+    }
   }
   &__userinfo {
     display: flex;
@@ -29,5 +41,34 @@
     &:last-child {
       margin-bottom: 15px;
     }
+  }
+  &__control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    padding-top: 15px;
+  }
+  &__counts {
+    display: flex;
+    justify-content: center;
+  }
+  &__count {
+    &:first-child {
+      padding-right: 40px;
+    }
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__link {
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include form-button(200px, 15px);
   }
 }

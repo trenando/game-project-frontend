@@ -30,7 +30,7 @@ export const registrationThunkCreator: RegistrationThunkCreator = (values) => as
     dispatch(registrationAC());
     dispatch(registrationSuccessAC(res.data));
     dispatch(registrationErrorAC(null));
-  } catch (err) {
+  } catch (err:any) {
     if (err.response.status < 500) {
       dispatch(registrationSuccessAC(null));
       dispatch(registrationErrorAC(err.response.data));

@@ -12,7 +12,7 @@ export class Validate {
 
   public minLength(min: number): this {
     this.rules.push({
-      test: (value: string) => (value.length < min ? `Минимальная длина ${min} символов` : null),
+      test: (value: string) => (value.length < min && value.length > 0 ? `Минимальная длина ${min} символов` : null),
     });
     return this;
   }

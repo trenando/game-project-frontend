@@ -1,8 +1,5 @@
 import { Validate } from "../../../validate/validate";
-import { ValidateType } from "../../../validate/ValidateTypes";
 import { Fields } from "./CreatePostFormTypes";
-
-const validate: ValidateType = new Validate();
 
 export const field: Fields = [
   {
@@ -14,7 +11,7 @@ export const field: Fields = [
     placeholder: "Заголовок",
     component: "input",
     type: "text",
-    validate: (value) => validate.required().minLength(5).maxLength(30).validate(value),
+    validate: (value) => new Validate().required().minLength(5).maxLength(30).validate(value),
   },
   {
     title: "Пост",
@@ -25,6 +22,6 @@ export const field: Fields = [
     placeholder: "Введите ваш пост",
     component: "textarea",
     type: "text",
-    validate: (value) => validate.required().validate(value),
+    validate: (value) => new Validate().required().validate(value),
   },
 ];

@@ -1,35 +1,23 @@
 import React from "react";
-import { Action, Dispatch } from "redux";
-import { ThunkDispatch } from "redux-thunk";
 import { PostId, PostIdResponse } from "../../api/types/PostsApiTypes";
-import {
-  PostIdAction,
-  UnmountPostAction,
-} from "../../redux/actions/postsActions/types/GetPostByIdActionsTypes";
 
-export type PostProps = {
-  postById: PostIdResponse;
-  getPost: (postId: PostId) => void;
-  unmountPost: () => void;
+export type PostSelector = {
+  postIdResponse: PostIdResponse;
+}
+
+export type PostByIdState = {
+  postById: PostSelector
 };
 
-type PostByIdState = {
-  postById: {
-    postId: PostIdResponse;
-  };
-};
+export type GetPostDispatch = (postId: PostId) => void;
 
-export type PostStateToProps = ({
-  postById,
-}: PostByIdState) => {
-  postById: PostIdResponse;
-};
+export type UnmountPostDispatch = () => void;
 
 export type PostFunction = React.FC<PostProps>;
 
-export type PostDispatch = (
-  dispatch: ThunkDispatch<PostId, void, Action<PostIdAction> | UnmountPostAction>
-) => {
+export type PostProps = {
+  postIdResponse: PostIdResponse;
+  postId: PostId;
   getPost: (postId: PostId) => void;
   unmountPost: () => void;
 };

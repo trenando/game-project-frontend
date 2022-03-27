@@ -6,7 +6,8 @@ import { PostsForm } from "./HomePostsForm/HomePostsForm";
 import { HomePostsElement, HomePostsFunction, NewUrl } from "./HomePostsTypes";
 import { Paginator } from "./Paginator/Paginator";
 
-export const HomePosts: HomePostsFunction = ({ homeState, changeUrl, isLoading }) => {
+export const HomePosts: HomePostsFunction = ({ postsList, changeUrl, isLoading }) => {
+  const { posts, allPostsCount, currentPage, postsPerPage } = postsList;
   const newUrl: NewUrl = (page) => {
     changeUrl(page);
   };
@@ -20,10 +21,10 @@ export const HomePosts: HomePostsFunction = ({ homeState, changeUrl, isLoading }
           <div>
             <PostsForm />
             <ul className={style.posts__items}>
-              {homeState.posts.length !== 0 &&
-                homeState.posts.map((el: HomePostsElement, index: number) => {
+              {posts.length !== 0 &&
+                posts.map((el: HomePostsElement) => {
                   return (
-                    <li key={index} className={style.posts__item}>
+                    <li key={el.postId} className={style.posts__item}>
                       <div className={style.posts__img}>
                         <img src="http://placehold.it/50x50" alt="img" />
                       </div>
@@ -42,9 +43,9 @@ export const HomePosts: HomePostsFunction = ({ homeState, changeUrl, isLoading }
             </ul>
           </div>
           <Paginator
-            allPostsCount={homeState.allPostsCount}
-            currentPage={homeState.currentPage}
-            postsPerPage={homeState.postsPerPage}
+            allPostsCount={allPostsCount}
+            currentPage={currentPage}
+            postsPerPage={postsPerPage}
             changeUrl={newUrl}
           />
         </>

@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 410px;
+  height: 460px;
   width: 410px;
   background-color: var(--content-background-color);
   @include section-block(15px);
@@ -23,19 +23,6 @@
     position: relative;
   }
 
-  &__age {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 150px;
-    label {
-      height: 25px;
-      padding-left: 5px;
-      cursor: pointer;
-    }
-  }
-
   &__label {
     display: flex;
     align-items: center;
@@ -47,22 +34,15 @@
 
   &__block {
     width: 350px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
   }
 
-  &__subblock {
-    width: 350px;
-    padding-bottom: 20px;
+  &__gender {
     display: flex;
-  }
-
-  &__subfield {
-    @include field(2px);
-    height: 25px;
-    width: 60px;
-    margin-left: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
   &__sublabel {
@@ -115,10 +95,10 @@
 }
 
 .response__error {
-  transform: translateY(139px);
+  transform: translateY(162px);
   @include response(26px, 350px, var(--error-color), var(--error-background-color));
 }
 .response__success {
-  transform: translateY(139px);
+  transform: translateY(162px);
   @include response(26px, 350px, var(--success-color), var(--success-background-color));
 }

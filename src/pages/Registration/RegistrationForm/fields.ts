@@ -1,8 +1,5 @@
 import { Validate } from "../../../validate/validate";
-import { ValidateType } from "../../../validate/ValidateTypes";
 import { RegistrationFormElement, RegistrationFormAnotherElement } from "./RegistrationFormTypes";
-
-const validate: ValidateType = new Validate();
 
 export const fields: RegistrationFormElement[] = [
   {
@@ -11,7 +8,7 @@ export const fields: RegistrationFormElement[] = [
     placeholder: "Login",
     type: "text",
     required: true,
-    validate: (value) => validate.required().minLength(3).maxLength(64).validate(value),
+    validate: (value) => new Validate().required().minLength(3).maxLength(64).validate(value),
   },
   {
     title: "Почта",
@@ -19,7 +16,7 @@ export const fields: RegistrationFormElement[] = [
     placeholder: "Email",
     type: "email",
     required: true,
-    validate: (value) => validate.required().maxLength(64).validate(value),
+    validate: (value) => new Validate().required().maxLength(64).validate(value),
   },
   {
     title: "Пароль",
@@ -27,7 +24,7 @@ export const fields: RegistrationFormElement[] = [
     placeholder: "Password",
     type: "password",
     required: true,
-    validate: (value) => validate.required().minLength(8).maxLength(128).validate(value),
+    validate: (value) => new Validate().required().minLength(8).maxLength(128).validate(value),
   },
   {
     title: "Имя",
@@ -35,7 +32,7 @@ export const fields: RegistrationFormElement[] = [
     placeholder: "Name",
     type: "text",
     required: true,
-    validate: (value) => validate.required().minLength(2).maxLength(64).validate(value),
+    validate: (value) => new Validate().required().minLength(2).maxLength(64).validate(value),
   },
   {
     title: "Фамилия",
@@ -43,7 +40,7 @@ export const fields: RegistrationFormElement[] = [
     placeholder: "Surname",
     type: "text",
     required: false,
-    validate: (value) => validate.minLength(3).maxLength(64).validate(value),
+    validate: (value) => new Validate().minLength(3).maxLength(64).validate(value),
   },
 ];
 
@@ -65,7 +62,7 @@ export const otherFields: RegistrationFormAnotherElement[] = [
   {
     title: "Возраст",
     name: "age",
-    type: "text",
-    placeholder: "Age",
+    type: "date",
+    value: ""
   },
 ];

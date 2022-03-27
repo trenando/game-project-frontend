@@ -19,7 +19,7 @@ export const createPostThunkCreator: CreatePostThunkCreator = (values) => async 
     const res = await postsAPI.postItem(values);
     dispatch(createdPostAC(res.data));
     dispatch(errorPostAC(null));
-  } catch (err) {
+  } catch (err:any) {
     if (err.response.status < 500) {
       dispatch(createdPostAC(null));
       dispatch(errorPostAC(err.response.data));

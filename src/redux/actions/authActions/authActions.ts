@@ -26,7 +26,7 @@ export const authorizationThunkCreator: AuthorizationThunkCreator = (values) => 
     dispatch(authorizationAC());
     dispatch(authErrorAC(null));
     dispatch(redirectAC());
-  } catch (err) {
+  } catch (err:any) {
     if (err.response.status < 500) {
       dispatch(authErrorAC(err.response.data));
     } else {

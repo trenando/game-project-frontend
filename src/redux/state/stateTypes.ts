@@ -5,7 +5,7 @@ export interface UserState {
   name: string | null;
   surname: string | null;
   gender: string | null;
-  age: number | null;
+  age: string | null;
   postCount: number;
   subCount: number;
 }

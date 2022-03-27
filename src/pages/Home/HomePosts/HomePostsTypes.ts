@@ -8,7 +8,7 @@ export type HomePostsState = {
 };
 
 type HomePostsProps = {
-  homeState: HomePostsState;
+  postsList: HomePostsState;
   isLoading: boolean;
   changeUrl: (page: string) => void;
 };

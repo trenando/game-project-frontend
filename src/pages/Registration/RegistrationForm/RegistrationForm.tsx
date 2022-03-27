@@ -20,16 +20,16 @@ export const RegistrationForm: RegistrationFormFunction = ({ onSubmit, errorMess
         name: "",
         surname: "",
         gender: "",
-        age: undefined,
+        age: ""
       }}
       onSubmit={onSubmit}
     >
       {({ errors, touched, isSubmitting }: RegistrationFormik) => (
         <Form className={style.form}>
           <h2 className={style.form__title}>Регистрация</h2>
-          {fields.map((el: RegistrationFormElement, index: number) => {
+          {fields.map((el: RegistrationFormElement) => {
             return (
-              <div key={index} className={style.form__block}>
+              <div key={el.name} className={style.form__block}>
                 <label htmlFor={el.name} className={style.form__label}>
                   <span>
                     {el.title}
@@ -53,14 +53,14 @@ export const RegistrationForm: RegistrationFormFunction = ({ onSubmit, errorMess
               </div>
             );
           })}
-          <div className={style.form__subblock}>
-            {otherFields.map((el: RegistrationFormAnotherElement, index: number) => {
-              return (
-                <React.Fragment key={index}>
-                  {el.values ? (
-                    el.values.map((element: GenderValues, id: number) => {
+          {otherFields.map((el: RegistrationFormAnotherElement) => {
+            return (
+              <React.Fragment key={el.name}>
+                {el.values ? (
+                  <div className={style.form__gender}>
+                    {el.values.map((element: GenderValues, index: number) => {
                       return (
-                        <label key={id} className={style.form__sublabel}>
+                        <label key={index} className={style.form__sublabel}>
                           <span>{element.radioName}</span>
                           <Field
                             value={element.value}
@@ -71,25 +71,25 @@ export const RegistrationForm: RegistrationFormFunction = ({ onSubmit, errorMess
                         </label>
                       );
                     })
-                  ) : (
-                    <div className={style.form__age}>
-                      <label htmlFor={el.name}>
-                        <span>{`${el.title}:`}</span>
-                      </label>
-                      <Field
-                        id={el.name}
-                        className={style.form__subfield}
-                        type={el.type}
-                        placeholder={el.placeholder}
-                        component="input"
-                        name={el.name}
-                      />
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </div>
+                    }
+                  </div>
+                ) : (
+                  <div className={style.form__block}>
+                    <label htmlFor={el.name}>
+                      <span>{`${el.title}:`}</span>
+                    </label>
+                    <Field
+                      id={el.name}
+                      className={style.form__field}
+                      type={el.type}
+                      component="input"
+                      name={el.name}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
           {errorMessage ? (
             <div className={style.response__error}>
               <span>{errorMessage}</span>

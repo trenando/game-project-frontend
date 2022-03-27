@@ -17,7 +17,7 @@ export const getPostByIdThunkCreator: GetPostByIdThunkCreator = (postId) => asyn
   try {
     const res = await postsAPI.getPostById(postId);
     dispatch(postIdAC(res.data));
-  } catch (err) {
+  } catch (err:any) {
     console.log("ошибка-заглушка", err.response.data);
   }
 };
