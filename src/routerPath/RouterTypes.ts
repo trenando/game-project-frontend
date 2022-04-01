@@ -1,34 +1,25 @@
-import { ConnectedComponent } from "react-redux";
 import React from "react";
-import { ProfileProps } from "../pages/Profile/ProfileTypes";
-import { LoginProps } from "../pages/Login/LoginTypes";
-import { RegistrationProps } from "../pages/Registration/RegistrationTypes";
-import { CreatePostProps } from "../pages/CreatePost/CreatePostTypes";
-import { PostProps } from "../pages/Post/PostTypes";
-import { HomeProps } from "../pages/Home/HomeTypes";
 
-type ComponentType<T> = ConnectedComponent<React.FC<T>, T>;
-
-type RouteElement<T> = {
+type RouteElement = {
   path: string;
   link: string;
   name: string;
-  component: ComponentType<T> | React.FC<T>;
+  element: JSX.Element;
 };
 
-type OtherRoutesElement<T> = {
+type OtherRoutesElement = {
   path: string;
-  component: ComponentType<T> | React.FC<T>;
+  element: JSX.Element;
 };
 
 type RouteElements = {
-  home: RouteElement<HomeProps>;
-  profile: RouteElement<ProfileProps>;
-  login: RouteElement<LoginProps>;
-  registration: RouteElement<RegistrationProps>;
-  createPost: RouteElement<CreatePostProps>;
-  post: OtherRoutesElement<PostProps>;
-  pageNotFound: OtherRoutesElement<{}>;
+  home: RouteElement;
+  profile: RouteElement;
+  login: RouteElement;
+  registration: RouteElement;
+  createPost: RouteElement;
+  post: OtherRoutesElement;
+  pageNotFound: OtherRoutesElement;
 };
 
 export type RouteType = RouteElements;

@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+import { Params } from "react-router-dom";
 import { CreatePostValues } from "../../pages/CreatePost/CreatePostTypes";
 import { QueryParams } from "../../pages/Home/HomeTypes";
 
@@ -9,9 +10,7 @@ type PostItem = {
   date: string;
 };
 
-export type PostId = {
-  postId: string;
-};
+export type PostId = Readonly<Params<string>>
 
 export type PostIdResponse = {
   date: string;

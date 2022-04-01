@@ -15,11 +15,10 @@ export const postsAPI: PostsAPI = {
         limit,
       },
     });
-    console.log("ищем ошибку", res);
     return res;
   },
   async getPostById({ postId }) {
-    const res = await instance.get(postId);
+    const res = await instance.get(postId as string);
     return res;
   },
 };
