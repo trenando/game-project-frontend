@@ -1,3 +1,4 @@
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   registrationThunkCreator,
@@ -10,9 +11,16 @@ export const RegistrationContainer: React.FC<{}> = () => {
   const dispatch = useDispatch();
   const registrationSelector: RegistrationSelector = useSelector(({ registration }: RegistrationState) => registration);
   const registration: RegistrationDispatch = (values) => dispatch(registrationThunkCreator(values));
-  const unmountRegistration: UnmountRegistrationDispatch = () => dispatch(unmountRegisterAC());
+  const unmountRegistration: UnmountRegistrationDispatch = useCallback(() => {
+    dispatch(unmountRegisterAC())
+  }, [dispatch])
+  useEffect(() => {
+    return () => {
+      unmountRegistration();
+    };
+  }, [unmountRegistration]);
   const registrationProps: RegistrationProps = {
-    ...registrationSelector, registration, unmountRegistration
+    ...registrationSelector, registration
   }
 
   return <Registration {...registrationProps} />

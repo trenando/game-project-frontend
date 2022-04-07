@@ -7,7 +7,7 @@ export const LOGOUT = "LOGOUT";
 const logoutAC: LogoutAC = () => ({ type: LOGOUT });
 
 export const logoutThunkCreator: LogoutThunkCreator = () => async (dispatch) => {
-    await authAPI.deleteLogin()
+    await authAPI.deleteLogin();
     dispatch(logoutAC());
     dispatch(redirectAC());
 };

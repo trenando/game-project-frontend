@@ -5,7 +5,7 @@ import { HomeFunction, ChangeUrl } from "./HomeTypes";
 import { useNavigate } from "react-router";
 import { HomePosts } from "./HomePosts/HomePosts";
 
-export const Home: HomeFunction = ({ isLoading, postsList, isAuth, postList }) => {
+export const Home: HomeFunction = ({ isLoading, postsList, isAuth }) => {
   const navigate = useNavigate();
 
   const changeUrl: ChangeUrl = (page) => {

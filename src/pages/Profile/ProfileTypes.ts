@@ -33,8 +33,6 @@ export type ProfileProps = {
   age: number | null;
   postCount: number | null;
   subCount: number | null;
-  isAuth: Boolean;
-  getMyProfile: () => void;
 };
 
 export type ProfileFunction = FC<ProfileProps>;

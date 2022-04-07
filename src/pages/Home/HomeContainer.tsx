@@ -12,11 +12,11 @@ export const HomeContainer: React.FC<{}> = () => {
   const postsList: PostsListSelector = useSelector(({ postsList }: HomeState) => postsList);
   const preloader: PreloaderSelector = useSelector(({ preloader }: PreloaderState) => preloader);
   const auth: AuthSelector = useSelector(({ auth }: AuthState) => auth);
-  const postList: PostListDispatch = useCallback((query) => {
+  const memoizedPostList: PostListDispatch = useCallback((query) => {
     dispatch(postsListThunkCreator(query))
   }, [dispatch]);
   const homeProps: HomeProps = {
-    postsList, ...preloader, ...auth, postList
+    postsList, ...preloader, ...auth
   }
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const HomeContainer: React.FC<{}> = () => {
       page: query.get("page"),
       limit: query.get("limit"),
     };
-    postList(queryParams);
-  }, [location, postList]);
+    memoizedPostList(queryParams);
+  }, [location, memoizedPostList]);
 
   return <Home {...homeProps} />
 }

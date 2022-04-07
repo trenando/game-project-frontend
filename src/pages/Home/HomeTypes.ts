@@ -29,7 +29,6 @@ export type HomeProps = {
   postsList: HomePostsState;
   isLoading: boolean;
   isAuth: boolean;
-  postList: (query: QueryParams) => void;
 };
 
 export type QueryParams = {

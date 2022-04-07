@@ -4,11 +4,7 @@ import style from "./Profile.module.scss";
 import { Link } from "react-router-dom";
 
 export const Profile: ProfileFunction = (props) => {
-  const { login, name, surname, gender, age, postCount, subCount, isAuth, getMyProfile } = props;
-  if (isAuth) {
-    getMyProfile();
-  }
-
+  const { login, name, surname, gender, age, postCount, subCount } = props;
   return (
     <section className={style.section}>
       <div className={style.profile}>

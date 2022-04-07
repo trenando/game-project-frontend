@@ -21,7 +21,6 @@ export type RegistrationValues = {
 
 export type RegistrationProps = {
   registration: (values: RegistrationValues) => void;
-  unmountRegistration: () => void;
   errorMessage: string | null;
   successMessage: string | null;
 };
