@@ -19,10 +19,13 @@ export type RegistrationValues = {
   age?: string;
 };
 
-export type RegistrationProps = {
-  registration: (values: RegistrationValues) => void;
+export interface RegistrationMemoProps {
   errorMessage: string | null;
-  successMessage: string | null;
+  successMessage: string | null
+}
+
+export interface RegistrationProps extends RegistrationMemoProps {
+  registration: (values: RegistrationValues) => void;
 };
 
 export type OnSubmit = (values: RegistrationValues) => void;

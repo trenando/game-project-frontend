@@ -13,10 +13,13 @@ export type AuthorizationValues = {
   password: string;
 };
 
-export type LoginProps = {
+export interface MemoLoginProps {
+  errorMessage: string | null;
+}
+
+export interface LoginProps extends MemoLoginProps {
   authorization: (values: AuthorizationValues) => void;
   unmountLogin: () => void;
-  errorMessage: string | null;
 };
 
 export type OnSubmit = (values: AuthorizationValues) => void;

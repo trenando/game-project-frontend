@@ -18,6 +18,4 @@ export type CreatePostFormElement = {
   validate: (value: string) => string | null;
 };
 
-export type Fields = CreatePostFormElement[];
-
 export type CreatePostFormFunction = React.FC<CreatePostFormProps>;

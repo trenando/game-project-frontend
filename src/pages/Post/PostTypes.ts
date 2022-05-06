@@ -9,15 +9,18 @@ export type PostByIdState = {
   postById: PostSelector
 };
 
+export interface MemoPostProps {
+  postIdResponse: PostIdResponse;
+  postId: PostId;
+}
+
 export type GetPostDispatch = (postId: PostId) => void;
 
 export type UnmountPostDispatch = () => void;
 
 export type PostFunction = React.FC<PostProps>;
 
-export type PostProps = {
-  postIdResponse: PostIdResponse;
-  postId: PostId;
+export interface PostProps extends MemoPostProps {
   getPost: (postId: PostId) => void;
   unmountPost: () => void;
 };

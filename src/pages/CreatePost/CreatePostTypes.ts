@@ -5,10 +5,13 @@ export type CreatePostMessagesSelector = {
   errorMessage: string | null;
 }
 
-export type CreatePostProps = {
-  createPost: (values: CreatePostValues) => void;
+export interface MemoCreatePostProps {
   successMessage: string | null;
   errorMessage: string | null;
+}
+
+export interface CreatePostProps extends MemoCreatePostProps{
+  createPost: (values: CreatePostValues) => void;
 };
 
 export type CreatePostState = {

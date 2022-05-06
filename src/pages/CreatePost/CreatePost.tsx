@@ -9,7 +9,8 @@ export const CreatePost: CreatePostFunction = ({
   errorMessage,
 }) => {
   const onSubmit: OnSubmit = (values: any) => {
-    createPost(values);
+    console.log("Вальюсы на сабмите", values);
+    //createPost(values);
   };
 
   return (

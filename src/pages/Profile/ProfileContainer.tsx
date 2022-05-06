@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../redux/actions/profileActions/profileActions";
 import { Profile } from "./Profile";
@@ -17,8 +17,10 @@ export const ProfileContainer: React.FC<{}> = () => {
       memoizedGetMyProfile();
     }
   }, [authSelector.isAuth, memoizedGetMyProfile])
-  const profileProps: ProfileProps = {
-    ...profileSelector, ...authSelector
-  }
+  const profileProps: ProfileProps = useMemo(()=>{
+    return {
+      ...profileSelector, ...authSelector
+    }
+  },[profileSelector,authSelector]);
   return <Profile {...profileProps} />
 }
